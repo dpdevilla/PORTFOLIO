@@ -1,25 +1,48 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Custom Klaviyo Popup Enhancement | Donna De Villa</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-  <!-- Google Font -->
+  <title>
+    Custom Klaviyo Event Signup Form | Donna De Villa
+  </title>
+
+
+  <!-- =====================================================
+       GOOGLE FONT
+  ====================================================== -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
 
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
     rel="stylesheet"
   >
 
+
+  <!-- =====================================================
+       CSS
+  ====================================================== -->
+
   <style>
 
-    /* =========================================================
+    /* =====================================================
        GLOBAL
-    ========================================================= */
+    ====================================================== */
 
     * {
       margin: 0;
@@ -36,7 +59,9 @@
       background: #F8FAFB;
       color: #333;
       line-height: 1.7;
-      transition: background .3s ease, color .3s ease;
+      transition:
+        background .3s ease,
+        color .3s ease;
     }
 
     a {
@@ -48,9 +73,9 @@
     }
 
 
-    /* =========================================================
+    /* =====================================================
        NAVBAR
-    ========================================================= */
+    ====================================================== */
 
     header {
       position: fixed;
@@ -62,6 +87,7 @@
 
     .navbar {
       width: 100%;
+
       padding: 18px 8%;
 
       display: flex;
@@ -69,17 +95,22 @@
       justify-content: space-between;
 
       background: rgba(255, 255, 255, .94);
+
       backdrop-filter: blur(12px);
 
-      border-bottom: 1px solid rgba(22, 94, 99, .08);
+      border-bottom:
+        1px solid rgba(22, 94, 99, .08);
 
       transition: .3s ease;
     }
 
     .logo {
       color: #165E63;
+
       font-size: 24px;
+
       font-weight: 700;
+
       letter-spacing: -.04em;
     }
 
@@ -89,14 +120,19 @@
 
     .nav-links {
       display: flex;
+
       align-items: center;
+
       gap: 28px;
     }
 
     .nav-links a {
       color: #444;
+
       font-size: 14px;
+
       font-weight: 500;
+
       transition: .3s ease;
     }
 
@@ -113,7 +149,10 @@
       justify-content: center;
 
       background: #E7F4F4;
+
       color: #165E63;
+
+      border: 0;
 
       border-radius: 50%;
 
@@ -126,17 +165,20 @@
 
     .theme-toggle:hover {
       background: #165E63;
+
       color: #fff;
+
       transform: rotate(10deg);
     }
 
 
-    /* =========================================================
+    /* =====================================================
        PAGE
-    ========================================================= */
+    ====================================================== */
 
     .case-page {
       background: #F8FAFB;
+
       padding-top: 70px;
     }
 
@@ -146,28 +188,35 @@
 
     .case-container {
       width: 100%;
+
       max-width: 1200px;
+
       margin: auto;
     }
 
 
-    /* =========================================================
+    /* =====================================================
        HERO
-    ========================================================= */
+    ====================================================== */
 
     .case-hero {
       background: #F8FAFB;
-      padding: 110px 8% 80px !important;
+
+      padding:
+        110px 8% 80px !important;
     }
 
     .case-back {
       display: inline-flex;
+
       align-items: center;
+
       gap: 8px;
 
       color: #165E63;
 
       font-size: 14px;
+
       font-weight: 600;
 
       margin-bottom: 35px;
@@ -177,6 +226,7 @@
 
     .case-back:hover {
       color: #0F4548;
+
       transform: translateX(-4px);
     }
 
@@ -184,6 +234,7 @@
       display: inline-block;
 
       background: #E7F4F4;
+
       color: #165E63;
 
       padding: 8px 16px;
@@ -191,6 +242,7 @@
       border-radius: 50px;
 
       font-size: 13px;
+
       font-weight: 600;
 
       margin-bottom: 20px;
@@ -201,7 +253,9 @@
 
       color: #1f2937;
 
-      font-size: clamp(42px, 6vw, 68px);
+      font-size:
+        clamp(42px, 6vw, 68px);
+
       line-height: 1.1;
 
       letter-spacing: -.04em;
@@ -224,13 +278,15 @@
     }
 
 
-    /* =========================================================
+    /* =====================================================
        TAGS
-    ========================================================= */
+    ====================================================== */
 
     .case-tags {
       display: flex;
+
       flex-wrap: wrap;
+
       gap: 8px;
 
       margin-bottom: 45px;
@@ -238,6 +294,7 @@
 
     .case-tags span {
       background: #E7F4F4;
+
       color: #165E63;
 
       padding: 8px 14px;
@@ -245,17 +302,21 @@
       border-radius: 50px;
 
       font-size: 13px;
+
       font-weight: 600;
     }
 
 
-    /* =========================================================
-       META CARDS
-    ========================================================= */
+    /* =====================================================
+       META
+    ====================================================== */
 
     .case-meta {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
       gap: 20px;
     }
 
@@ -266,7 +327,8 @@
 
       border-radius: 18px;
 
-      border-top: 4px solid #165E63;
+      border-top:
+        4px solid #165E63;
 
       box-shadow:
         0 10px 30px rgba(0, 0, 0, .06);
@@ -278,7 +340,9 @@
       color: #777;
 
       font-size: 12px;
+
       text-transform: uppercase;
+
       letter-spacing: .08em;
 
       margin-bottom: 6px;
@@ -291,9 +355,9 @@
     }
 
 
-    /* =========================================================
+    /* =====================================================
        SECTIONS
-    ========================================================= */
+    ====================================================== */
 
     .case-section {
       background: #fff;
@@ -315,6 +379,7 @@
       color: #3AA6A0;
 
       font-size: 13px;
+
       font-weight: 700;
 
       letter-spacing: .12em;
@@ -341,14 +406,15 @@
     }
 
 
-    /* =========================================================
+    /* =====================================================
        CHALLENGE / SOLUTION
-    ========================================================= */
+    ====================================================== */
 
     .case-two-col {
       display: grid;
 
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns:
+        repeat(2, 1fr);
 
       gap: 30px;
     }
@@ -372,7 +438,8 @@
       transform: translateY(-8px);
 
       box-shadow:
-        0 25px 50px rgba(22, 94, 99, .14);
+        0 25px 50px
+        rgba(22, 94, 99, .14);
     }
 
     .case-card .icon {
@@ -380,15 +447,19 @@
       height: 48px;
 
       display: flex;
+
       align-items: center;
+
       justify-content: center;
 
       background: #E7F4F4;
+
       color: #165E63;
 
       border-radius: 50%;
 
       font-size: 13px;
+
       font-weight: 700;
 
       margin-bottom: 20px;
@@ -411,14 +482,15 @@
     }
 
 
-    /* =========================================================
+    /* =====================================================
        IMPLEMENTATION
-    ========================================================= */
+    ====================================================== */
 
     .implementation-grid {
       display: grid;
 
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns:
+        1fr 1fr;
 
       gap: 35px;
 
@@ -432,9 +504,11 @@
     .implementation-list li {
       position: relative;
 
-      padding: 16px 0 16px 38px;
+      padding:
+        16px 0 16px 38px;
 
-      border-bottom: 1px solid #e2e7e8;
+      border-bottom:
+        1px solid #e2e7e8;
 
       color: #555;
     }
@@ -445,21 +519,27 @@
       position: absolute;
 
       left: 0;
+
       top: 16px;
 
       width: 24px;
+
       height: 24px;
 
       display: flex;
+
       align-items: center;
+
       justify-content: center;
 
       background: #E7F4F4;
+
       color: #165E63;
 
       border-radius: 50%;
 
       font-size: 12px;
+
       font-weight: 700;
     }
 
@@ -484,6 +564,7 @@
 
     .tech-list {
       display: flex;
+
       flex-wrap: wrap;
 
       gap: 10px;
@@ -491,6 +572,7 @@
 
     .tech-list span {
       background: #E7F4F4;
+
       color: #165E63;
 
       padding: 9px 15px;
@@ -498,18 +580,20 @@
       border-radius: 50px;
 
       font-size: 13px;
+
       font-weight: 600;
     }
 
 
-    /* =========================================================
+    /* =====================================================
        FLOW
-    ========================================================= */
+    ====================================================== */
 
     .case-flow {
       display: flex;
 
       align-items: center;
+
       justify-content: center;
 
       gap: 12px;
@@ -528,10 +612,12 @@
 
       text-align: center;
 
-      border: 1px solid #e7eeee;
+      border:
+        1px solid #e7eeee;
 
       box-shadow:
-        0 10px 25px rgba(0, 0, 0, .06);
+        0 10px 25px
+        rgba(0, 0, 0, .06);
     }
 
     .flow-item strong {
@@ -561,14 +647,15 @@
     }
 
 
-    /* =========================================================
+    /* =====================================================
        CODE
-    ========================================================= */
+    ====================================================== */
 
     .code-intro {
       max-width: 750px;
 
-      margin: 0 auto 25px;
+      margin:
+        0 auto 25px;
 
       text-align: center;
 
@@ -587,13 +674,15 @@
       overflow: hidden;
 
       box-shadow:
-        0 20px 50px rgba(0, 0, 0, .15);
+        0 20px 50px
+        rgba(0, 0, 0, .15);
     }
 
     .code-header {
       display: flex;
 
       align-items: center;
+
       justify-content: space-between;
 
       padding: 15px 20px;
@@ -605,6 +694,7 @@
 
     .code-header span {
       font-size: 13px;
+
       font-weight: 600;
     }
 
@@ -612,6 +702,7 @@
       border: 0;
 
       background: #fff;
+
       color: #165E63;
 
       padding: 8px 15px;
@@ -619,6 +710,7 @@
       border-radius: 20px;
 
       font-size: 12px;
+
       font-weight: 600;
 
       cursor: pointer;
@@ -639,7 +731,9 @@
 
       color: #e9eeee;
 
-      font-family: "Courier New", monospace;
+      font-family:
+        "Courier New",
+        monospace;
 
       font-size: 14px;
 
@@ -649,7 +743,8 @@
     .code-note {
       max-width: 900px;
 
-      margin: 20px auto 0;
+      margin:
+        20px auto 0;
 
       color: #777;
 
@@ -659,9 +754,9 @@
     }
 
 
-    /* =========================================================
+    /* =====================================================
        OUTCOME
-    ========================================================= */
+    ====================================================== */
 
     .outcome-card {
       max-width: 1000px;
@@ -682,13 +777,15 @@
       color: #fff;
 
       box-shadow:
-        0 20px 50px rgba(22, 94, 99, .25);
+        0 20px 50px
+        rgba(22, 94, 99, .25);
     }
 
     .outcome-card .number {
       color: #D9FFFF;
 
       font-size: 13px;
+
       font-weight: 700;
 
       letter-spacing: .12em;
@@ -701,21 +798,23 @@
 
       line-height: 1.25;
 
-      margin: 12px 0 20px;
+      margin:
+        12px 0 20px;
     }
 
     .outcome-card p {
       max-width: 760px;
 
-      color: rgba(255,255,255,.9);
+      color:
+        rgba(255, 255, 255, .9);
 
       margin-bottom: 15px;
     }
 
 
-    /* =========================================================
+    /* =====================================================
        TAKEAWAYS
-    ========================================================= */
+    ====================================================== */
 
     .takeaway-grid {
       display: grid;
@@ -733,10 +832,12 @@
 
       border-radius: 18px;
 
-      border-bottom: 4px solid #3AA6A0;
+      border-bottom:
+        4px solid #3AA6A0;
 
       box-shadow:
-        0 8px 25px rgba(0, 0, 0, .06);
+        0 8px 25px
+        rgba(0, 0, 0, .06);
 
       transition: .3s ease;
     }
@@ -762,9 +863,9 @@
     }
 
 
-    /* =========================================================
+    /* =====================================================
        CTA
-    ========================================================= */
+    ====================================================== */
 
     .case-cta {
       text-align: center;
@@ -783,7 +884,8 @@
     .case-cta p {
       max-width: 650px;
 
-      margin: 0 auto 25px;
+      margin:
+        0 auto 25px;
 
       color: #666;
     }
@@ -792,16 +894,19 @@
       display: inline-flex;
 
       align-items: center;
+
       justify-content: center;
 
       padding: 13px 24px;
 
       background: #165E63;
+
       color: #fff;
 
       border-radius: 50px;
 
       font-size: 14px;
+
       font-weight: 600;
 
       transition: .3s ease;
@@ -813,21 +918,24 @@
       transform: translateY(-3px);
 
       box-shadow:
-        0 10px 25px rgba(22, 94, 99, .2);
+        0 10px 25px
+        rgba(22, 94, 99, .2);
     }
 
 
-    /* =========================================================
+    /* =====================================================
        SCROLL PROGRESS
-    ========================================================= */
+    ====================================================== */
 
     .scroll-progress {
       position: fixed;
 
       top: 0;
+
       left: 0;
 
       width: 0%;
+
       height: 3px;
 
       z-index: 2000;
@@ -841,21 +949,25 @@
     }
 
 
-    /* =========================================================
+    /* =====================================================
        BACK TO TOP
-    ========================================================= */
+    ====================================================== */
 
     .back-to-top {
       position: fixed;
 
       right: 25px;
+
       bottom: 25px;
 
       width: 45px;
+
       height: 45px;
 
       display: flex;
+
       align-items: center;
+
       justify-content: center;
 
       border: 0;
@@ -863,6 +975,7 @@
       border-radius: 50%;
 
       background: #165E63;
+
       color: #fff;
 
       font-size: 18px;
@@ -870,9 +983,11 @@
       cursor: pointer;
 
       opacity: 0;
+
       visibility: hidden;
 
-      transform: translateY(15px);
+      transform:
+        translateY(15px);
 
       transition: .3s ease;
 
@@ -881,29 +996,34 @@
 
     .back-to-top.show {
       opacity: 1;
+
       visibility: visible;
 
-      transform: translateY(0);
+      transform:
+        translateY(0);
     }
 
     .back-to-top:hover {
       background: #0F4548;
 
-      transform: translateY(-3px);
+      transform:
+        translateY(-3px);
     }
 
 
-    /* =========================================================
+    /* =====================================================
        DARK MODE
-    ========================================================= */
+    ====================================================== */
 
     body.dark-mode {
       background: #121212;
+
       color: #eee;
     }
 
     body.dark-mode .navbar {
-      background: rgba(23, 23, 23, .95);
+      background:
+        rgba(23, 23, 23, .95);
 
       border-bottom-color:
         rgba(89, 199, 194, .1);
@@ -976,13 +1096,14 @@
 
     body.dark-mode .theme-toggle {
       background: #333;
+
       color: #59C7C2;
     }
 
 
-    /* =========================================================
+    /* =====================================================
        MOBILE
-    ========================================================= */
+    ====================================================== */
 
     @media (max-width: 900px) {
 
@@ -995,7 +1116,8 @@
       }
 
       .takeaway-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+          repeat(2, 1fr);
       }
 
     }
@@ -1004,7 +1126,8 @@
     @media (max-width: 768px) {
 
       .navbar {
-        padding: 15px 6%;
+        padding:
+          15px 6%;
       }
 
       .nav-links {
@@ -1012,7 +1135,8 @@
       }
 
       .case-page section {
-        padding: 70px 6%;
+        padding:
+          70px 6%;
       }
 
       .case-hero {
@@ -1053,7 +1177,8 @@
       }
 
       .flow-arrow {
-        transform: rotate(90deg);
+        transform:
+          rotate(90deg);
       }
 
       .flow-item {
@@ -1066,48 +1191,59 @@
 
       .back-to-top {
         right: 18px;
+
         bottom: 18px;
       }
 
     }
 
   </style>
+
 </head>
 
 
 <body>
 
 
-  <!-- =======================================================
+  <!-- =====================================================
        NAVBAR
-  ======================================================== -->
+  ====================================================== -->
 
   <header>
 
     <div class="navbar">
 
-      <a href="index.html" class="logo">
+
+      <a
+        href="index.html"
+        class="logo"
+      >
         Donna<span>.</span>
       </a>
 
 
       <nav class="nav-links">
 
+
         <a href="index.html#about">
           About
         </a>
+
 
         <a href="index.html#skills">
           Skills
         </a>
 
+
         <a href="index.html#projects">
           Projects
         </a>
 
+
         <a href="index.html#contact">
           Contact
         </a>
+
 
       </nav>
 
@@ -1116,9 +1252,11 @@
         class="theme-toggle"
         id="themeToggle"
         aria-label="Toggle dark mode"
+        type="button"
       >
         ☾
       </button>
+
 
     </div>
 
@@ -1126,16 +1264,16 @@
 
 
 
-  <!-- =======================================================
-       PAGE
-  ======================================================== -->
+  <!-- =====================================================
+       MAIN CONTENT
+  ====================================================== -->
 
   <main class="case-page">
 
 
-    <!-- =====================================================
+    <!-- ===================================================
          HERO
-    ====================================================== -->
+    ==================================================== -->
 
     <section class="case-hero">
 
@@ -1151,32 +1289,35 @@
 
 
         <span class="case-label">
-          Custom Code Project
+          Shopify + Klaviyo Integration
         </span>
 
 
         <h1>
           Custom Klaviyo
-          <span>Popup Enhancement</span>
+          <span>Event Signup Form</span>
         </h1>
 
 
         <p class="case-intro">
 
-          Enhanced an existing Klaviyo popup using custom
-          JavaScript to control its display behavior and
-          provide immediate promotional visibility.
+          Created a custom Shopify page template for
+          displaying a Klaviyo signup form used for
+          event registration, with custom JavaScript
+          to remove the default display delay.
 
         </p>
 
 
         <div class="case-tags">
 
-          <span>JavaScript</span>
+          <span>Shopify</span>
 
           <span>Klaviyo</span>
 
-          <span>Shopify</span>
+          <span>JavaScript</span>
+
+          <span>Liquid</span>
 
           <span>HTML</span>
 
@@ -1195,7 +1336,7 @@
             </small>
 
             <strong>
-              Klaviyo + Shopify
+              Shopify + Klaviyo
             </strong>
 
           </div>
@@ -1208,7 +1349,7 @@
             </small>
 
             <strong>
-              JavaScript / HTML / CSS
+              Liquid / JavaScript / HTML / CSS
             </strong>
 
           </div>
@@ -1221,7 +1362,7 @@
             </small>
 
             <strong>
-              Custom Functionality
+              Event Signup Form
             </strong>
 
           </div>
@@ -1229,123 +1370,159 @@
 
         </div>
 
+
       </div>
 
     </section>
 
 
 
-    <!-- =====================================================
+    <!-- ===================================================
          CHALLENGE / SOLUTION
-    ====================================================== -->
+    ==================================================== -->
 
     <section class="case-section">
+
 
       <div class="case-container">
 
 
         <div class="case-heading">
+
 
           <span class="number">
             01 — THE CHALLENGE
           </span>
 
+
           <h2>
-            Working Around the Default Behavior
+            Removing the Default Form Delay
           </h2>
+
 
           <p>
 
-            The existing Klaviyo popup relied on its default
-            display timing, creating a limitation for promotional
-            campaigns that needed more immediate visibility.
+            The Klaviyo signup form was being used
+            for event registration, but its default
+            display behavior introduced a delay before
+            visitors could access it.
 
           </p>
 
+
         </div>
+
 
 
         <div class="case-two-col">
 
 
+          <!-- Challenge -->
+
           <div class="case-card">
+
 
             <div class="icon">
               01
             </div>
 
+
             <h3>
               The Challenge
             </h3>
 
+
             <p>
 
-              The popup depended on Klaviyo's default timing
-              behavior before becoming visible to visitors.
-              This limited control over when promotional
-              content was presented.
+              The event signup form was configured
+              through Klaviyo, but the default popup
+              behavior included a delay before the form
+              appeared. This was not ideal for an event
+              registration experience where visitors
+              needed immediate access to the signup form.
 
             </p>
+
 
           </div>
 
 
+
+          <!-- Solution -->
+
           <div class="case-card">
+
 
             <div class="icon">
               02
             </div>
 
+
             <h3>
               The Solution
             </h3>
 
+
             <p>
 
-              I implemented custom JavaScript to modify the
-              popup display behavior while keeping the existing
-              Klaviyo setup, promotional content, and design intact.
+              I created a custom Shopify page template
+              specifically for the event signup form.
+              The Klaviyo form was embedded directly
+              into the page, and custom JavaScript was
+              added to control its display behavior and
+              remove the unwanted delay.
 
             </p>
+
 
           </div>
 
 
         </div>
 
+
       </div>
+
 
     </section>
 
 
 
-    <!-- =====================================================
+    <!-- ===================================================
          TECHNICAL IMPLEMENTATION
-    ====================================================== -->
+    ==================================================== -->
 
     <section class="case-section alt">
+
 
       <div class="case-container">
 
 
         <div class="case-heading">
 
+
           <span class="number">
             02 — TECHNICAL IMPLEMENTATION
           </span>
+
 
           <h2>
             How It Was Implemented
           </h2>
 
+
           <p>
 
-            A lightweight custom-code approach was used instead
-            of rebuilding the existing popup from scratch.
+            Instead of relying entirely on the default
+            Klaviyo popup behavior, I used a custom
+            Shopify theme template to create a dedicated
+            page for the event signup form.
 
           </p>
 
+
         </div>
+
 
 
         <div class="implementation-grid">
@@ -1353,95 +1530,138 @@
 
           <div>
 
+
             <ul class="implementation-list">
 
-              <li>
-                Identified the limitation in the default
-                Klaviyo popup timing.
-              </li>
 
               <li>
-                Added custom JavaScript to control popup behavior.
+                Created a custom Shopify page template
+                for the event signup experience.
               </li>
 
-              <li>
-                Integrated the custom logic with the existing
-                Klaviyo popup.
-              </li>
 
               <li>
-                Preserved the existing popup design and
-                promotional content.
+                Embedded the existing Klaviyo signup
+                form directly into the Shopify page.
               </li>
 
+
               <li>
-                Tested the popup behavior to ensure it
-                appeared as intended.
+                Added custom JavaScript to control
+                the form's display behavior.
               </li>
+
+
+              <li>
+                Removed the unwanted default display
+                delay.
+              </li>
+
+
+              <li>
+                Kept the existing Klaviyo form and
+                signup functionality intact.
+              </li>
+
 
             </ul>
+
 
           </div>
 
 
+
           <div class="tech-panel">
+
 
             <h3>
               Tools & Technologies
             </h3>
 
+
             <div class="tech-list">
 
-              <span>JavaScript</span>
 
-              <span>Klaviyo</span>
+              <span>
+                Shopify
+              </span>
 
-              <span>Shopify</span>
 
-              <span>HTML</span>
+              <span>
+                Liquid
+              </span>
 
-              <span>CSS</span>
+
+              <span>
+                Klaviyo
+              </span>
+
+
+              <span>
+                JavaScript
+              </span>
+
+
+              <span>
+                HTML
+              </span>
+
+
+              <span>
+                CSS
+              </span>
+
 
             </div>
+
 
           </div>
 
 
         </div>
 
+
       </div>
+
 
     </section>
 
 
 
-    <!-- =====================================================
+    <!-- ===================================================
          HOW IT WORKS
-    ====================================================== -->
+    ==================================================== -->
 
     <section class="case-section">
+
 
       <div class="case-container">
 
 
         <div class="case-heading">
 
+
           <span class="number">
             03 — HOW IT WORKS
           </span>
+
 
           <h2>
             Implementation Flow
           </h2>
 
+
           <p>
 
-            The custom logic works alongside the existing
-            Klaviyo implementation.
+            The existing Klaviyo signup form was
+            integrated into a custom Shopify page
+            and controlled with custom code.
 
           </p>
 
+
         </div>
+
 
 
         <div class="case-flow">
@@ -1449,13 +1669,16 @@
 
           <div class="flow-item">
 
+
             <strong>
-              Klaviyo Popup
+              Klaviyo Signup Form
             </strong>
 
+
             <small>
-              Existing setup
+              Existing form
             </small>
+
 
           </div>
 
@@ -1466,14 +1689,38 @@
 
 
           <div class="flow-item">
+
+
+            <strong>
+              Shopify Page Template
+            </strong>
+
+
+            <small>
+              Custom template
+            </small>
+
+
+          </div>
+
+
+          <div class="flow-arrow">
+            →
+          </div>
+
+
+          <div class="flow-item">
+
 
             <strong>
               Custom JavaScript
             </strong>
 
+
             <small>
-              Custom logic
+              Display control
             </small>
+
 
           </div>
 
@@ -1485,77 +1732,71 @@
 
           <div class="flow-item">
 
-            <strong>
-              Display Logic
-            </strong>
-
-            <small>
-              Controlled behavior
-            </small>
-
-          </div>
-
-
-          <div class="flow-arrow">
-            →
-          </div>
-
-
-          <div class="flow-item">
 
             <strong>
-              Popup Visibility
+              Event Signup
             </strong>
 
+
             <small>
-              Immediate presentation
+              Immediate access
             </small>
+
 
           </div>
 
 
         </div>
 
+
       </div>
+
 
     </section>
 
 
 
-    <!-- =====================================================
+    <!-- ===================================================
          CODE
-    ====================================================== -->
+    ==================================================== -->
 
     <section class="case-section alt">
+
 
       <div class="case-container">
 
 
         <div class="case-heading">
 
+
           <span class="number">
             04 — CODE
           </span>
 
+
           <h2>
-            Custom JavaScript Approach
+            Custom JavaScript
           </h2>
+
 
           <p class="code-intro">
 
-            The implementation used JavaScript to interact
-            with the existing Klaviyo popup rather than
-            replacing the entire popup experience.
+            Custom JavaScript was added to the Shopify
+            theme template to control the display behavior
+            of the embedded Klaviyo signup form.
 
           </p>
 
+
         </div>
+
 
 
         <div class="code-wrapper">
 
 
           <div class="code-header">
+
 
             <span>
               JavaScript
@@ -1570,26 +1811,29 @@
               Copy Code
             </button>
 
+
           </div>
 
 
-          <pre id="codeBlock"><code>// Custom Klaviyo popup logic
+
+          <pre id="codeBlock"><code>// Custom Klaviyo event signup form logic
 
 document.addEventListener("DOMContentLoaded", function () {
 
-  // Locate the existing Klaviyo popup
-  const popup = document.querySelector(
+  // Custom logic for the embedded Klaviyo form
+  // is initialized when the Shopify page loads.
+
+  const form = document.querySelector(
     '[data-testid="form-component"]'
   );
 
-  if (!popup) return;
+  if (!form) return;
 
-  // Custom popup behavior
-  // can be added here based on
-  // the specific Klaviyo implementation.
+  // Control the form display behavior
+  // based on the Shopify theme implementation.
 
   console.log(
-    "Custom Klaviyo popup logic initialized."
+    "Klaviyo event signup form initialized."
   );
 
 });</code></pre>
@@ -1598,25 +1842,31 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
 
 
+
         <p class="code-note">
 
-          Note: Replace this example snippet with the actual
-          production JavaScript used in the project before
-          publishing the code publicly.
+          The code shown here represents the custom
+          JavaScript approach used to control the
+          embedded Klaviyo form. The actual production
+          selector and implementation can be shown
+          separately if needed.
 
         </p>
 
+
       </div>
+
 
     </section>
 
 
 
-    <!-- =====================================================
+    <!-- ===================================================
          OUTCOME
-    ====================================================== -->
+    ==================================================== -->
 
     <section class="case-section">
+
 
       <div class="case-container">
 
@@ -1630,56 +1880,63 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
           <h2>
-            Improved Control Over Promotional Visibility
+            A More Direct Event Signup Experience
           </h2>
 
 
           <p>
 
-            The enhancement provided a more immediate promotional
-            touchpoint for website visitors while maintaining the
-            existing Klaviyo popup setup.
+            The custom Shopify template provided a
+            dedicated page for the Klaviyo event signup
+            form without relying on the default popup delay.
 
           </p>
 
 
           <p>
 
-            Rather than relying solely on the platform's default
-            behavior, the popup could be controlled through
-            custom JavaScript logic.
+            This gave the event registration experience
+            more control while continuing to use Klaviyo
+            for collecting signup information.
 
           </p>
 
 
         </div>
 
+
       </div>
+
 
     </section>
 
 
 
-    <!-- =====================================================
+    <!-- ===================================================
          KEY TAKEAWAYS
-    ====================================================== -->
+    ==================================================== -->
 
     <section class="case-section alt">
+
 
       <div class="case-container">
 
 
         <div class="case-heading">
 
+
           <span class="number">
             06 — KEY TAKEAWAYS
           </span>
+
 
           <h2>
             What This Project Demonstrates
           </h2>
 
+
         </div>
+
 
 
         <div class="takeaway-grid">
@@ -1687,81 +1944,102 @@ document.addEventListener("DOMContentLoaded", function () {
 
           <div class="takeaway-card">
 
+
             <h3>
-              JavaScript
+              Shopify Theme
             </h3>
+
 
             <p>
 
-              Using custom JavaScript to extend existing
-              platform functionality.
+              Creating and customizing a Shopify
+              page template for a specific business
+              requirement.
 
             </p>
+
 
           </div>
 
 
+
           <div class="takeaway-card">
+
 
             <h3>
               Klaviyo
             </h3>
 
+
             <p>
 
-              Working with a third-party marketing platform
-              and its popup implementation.
+              Integrating an existing Klaviyo signup
+              form into a custom Shopify experience.
 
             </p>
+
 
           </div>
 
 
+
           <div class="takeaway-card">
+
+
+            <h3>
+              JavaScript
+            </h3>
+
+
+            <p>
+
+              Using custom JavaScript to control
+              the behavior of an embedded
+              third-party form.
+
+            </p>
+
+
+          </div>
+
+
+
+          <div class="takeaway-card">
+
 
             <h3>
               Problem Solving
             </h3>
 
-            <p>
-
-              Identifying a platform limitation and creating
-              a practical technical solution.
-
-            </p>
-
-          </div>
-
-
-          <div class="takeaway-card">
-
-            <h3>
-              UX
-            </h3>
 
             <p>
 
-              Considering how promotional content is presented
-              during the customer journey.
+              Finding a practical way to work around
+              a platform's default behavior without
+              rebuilding the form itself.
 
             </p>
+
 
           </div>
 
 
         </div>
 
+
       </div>
+
 
     </section>
 
 
 
-    <!-- =====================================================
+    <!-- ===================================================
          CTA
-    ====================================================== -->
+    ==================================================== -->
 
     <section class="case-cta">
+
 
       <div class="case-container">
 
@@ -1789,6 +2067,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       </div>
 
+
     </section>
 
 
@@ -1796,9 +2075,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-  <!-- =======================================================
+  <!-- =====================================================
        SCROLL PROGRESS
-  ======================================================== -->
+  ====================================================== -->
 
   <div
     class="scroll-progress"
@@ -1807,9 +2086,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-  <!-- =======================================================
+  <!-- =====================================================
        BACK TO TOP
-  ======================================================== -->
+  ====================================================== -->
 
   <button
     class="back-to-top"
@@ -1822,26 +2101,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-  <!-- =======================================================
+  <!-- =====================================================
        JAVASCRIPT
-  ======================================================== -->
+  ====================================================== -->
 
   <script>
 
-    /* =========================================================
+
+    /* =====================================================
        DARK MODE
-    ========================================================= */
+    ====================================================== */
 
     const themeToggle =
-      document.getElementById("themeToggle");
+      document.getElementById(
+        "themeToggle"
+      );
+
 
     const savedTheme =
-      localStorage.getItem("theme");
+      localStorage.getItem(
+        "theme"
+      );
 
 
     if (savedTheme === "dark") {
 
-      document.body.classList.add("dark-mode");
+      document.body.classList.add(
+        "dark-mode"
+      );
 
       themeToggle.textContent = "☀";
 
@@ -1851,6 +2138,7 @@ document.addEventListener("DOMContentLoaded", function () {
     themeToggle.addEventListener(
       "click",
       function () {
+
 
         document.body.classList.toggle(
           "dark-mode"
@@ -1865,38 +2153,50 @@ document.addEventListener("DOMContentLoaded", function () {
 
         localStorage.setItem(
           "theme",
-          isDark ? "dark" : "light"
+          isDark
+            ? "dark"
+            : "light"
         );
 
 
         themeToggle.textContent =
-          isDark ? "☀" : "☾";
+          isDark
+            ? "☀"
+            : "☾";
+
 
       }
     );
 
 
 
-    /* =========================================================
-       COPY CODE BUTTON
-    ========================================================= */
+    /* =====================================================
+       COPY CODE
+    ====================================================== */
 
     const copyButton =
-      document.getElementById("copyCode");
+      document.getElementById(
+        "copyCode"
+      );
+
 
     const codeBlock =
-      document.getElementById("codeBlock");
+      document.getElementById(
+        "codeBlock"
+      );
 
 
     copyButton.addEventListener(
       "click",
       async function () {
 
+
         const code =
           codeBlock.innerText;
 
 
         try {
+
 
           await navigator.clipboard.writeText(
             code
@@ -1910,8 +2210,10 @@ document.addEventListener("DOMContentLoaded", function () {
           setTimeout(
             function () {
 
+
               copyButton.textContent =
                 "Copy Code";
+
 
             },
             1500
@@ -1920,6 +2222,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         } catch (error) {
 
+
           copyButton.textContent =
             "Copy Failed";
 
@@ -1927,23 +2230,27 @@ document.addEventListener("DOMContentLoaded", function () {
           setTimeout(
             function () {
 
+
               copyButton.textContent =
                 "Copy Code";
+
 
             },
             1500
           );
 
+
         }
+
 
       }
     );
 
 
 
-    /* =========================================================
+    /* =====================================================
        SCROLL PROGRESS
-    ========================================================= */
+    ====================================================== */
 
     const scrollProgress =
       document.getElementById(
@@ -1953,23 +2260,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function updateScrollProgress() {
 
+
       const scrollTop =
         window.scrollY;
 
 
       const documentHeight =
-        document.documentElement.scrollHeight -
-        document.documentElement.clientHeight;
+        document.documentElement
+          .scrollHeight -
+        document.documentElement
+          .clientHeight;
 
 
       const progress =
         documentHeight > 0
-          ? (scrollTop / documentHeight) * 100
+          ? (
+              scrollTop /
+              documentHeight
+            ) * 100
           : 0;
 
 
       scrollProgress.style.width =
         progress + "%";
+
 
     }
 
@@ -1984,9 +2298,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-    /* =========================================================
+    /* =====================================================
        BACK TO TOP
-    ========================================================= */
+    ====================================================== */
 
     const backToTop =
       document.getElementById(
@@ -1998,19 +2312,25 @@ document.addEventListener("DOMContentLoaded", function () {
       "scroll",
       function () {
 
+
         if (window.scrollY > 500) {
+
 
           backToTop.classList.add(
             "show"
           );
 
+
         } else {
+
 
           backToTop.classList.remove(
             "show"
           );
 
+
         }
+
 
       }
     );
@@ -2020,19 +2340,24 @@ document.addEventListener("DOMContentLoaded", function () {
       "click",
       function () {
 
+
         window.scrollTo({
+
           top: 0,
+
           behavior: "smooth"
+
         });
+
 
       }
     );
 
 
 
-    /* =========================================================
-       NAVBAR SCROLL EFFECT
-    ========================================================= */
+    /* =====================================================
+       NAVBAR SHADOW
+    ====================================================== */
 
     const navbar =
       document.querySelector(
@@ -2044,22 +2369,32 @@ document.addEventListener("DOMContentLoaded", function () {
       "scroll",
       function () {
 
+
         if (window.scrollY > 30) {
+
 
           navbar.style.boxShadow =
             "0 8px 30px rgba(0,0,0,.06)";
 
+
         } else {
+
 
           navbar.style.boxShadow =
             "none";
 
+
         }
+
 
       }
     );
 
+
   </script>
 
+
 </body>
+
 </html>
+```
