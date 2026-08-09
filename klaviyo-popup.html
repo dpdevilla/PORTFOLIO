@@ -1,37 +1,25 @@
-```html
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
 
   <meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Custom Klaviyo Event Signup Form | Donna De Villa</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
     rel="stylesheet"
   >
 
-
   <style>
-
-    /* =========================
-       RESET
-    ========================= */
 
     * {
       margin: 0;
@@ -58,10 +46,7 @@
       font-family: inherit;
     }
 
-
-    /* =========================
-       NAVBAR
-    ========================= */
+    /* NAVBAR */
 
     header {
       position: fixed;
@@ -73,25 +58,18 @@
 
     .navbar {
       padding: 18px 8%;
-
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       background: rgba(255,255,255,.95);
-
       backdrop-filter: blur(10px);
-
       border-bottom: 1px solid rgba(22,94,99,.08);
-
-      transition: .3s ease;
     }
 
     .logo {
       color: #165E63;
       font-size: 24px;
       font-weight: 700;
-      letter-spacing: -.04em;
     }
 
     .logo span {
@@ -107,7 +85,6 @@
       color: #444;
       font-size: 14px;
       font-weight: 500;
-      transition: .3s ease;
     }
 
     .nav-links a:hover {
@@ -117,33 +94,17 @@
     .theme-toggle {
       width: 38px;
       height: 38px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
       border: 0;
       border-radius: 50%;
-
       background: #E7F4F4;
       color: #165E63;
-
       cursor: pointer;
-
-      font-size: 17px;
     }
 
-
-    /* =========================
-       GENERAL
-    ========================= */
+    /* GENERAL */
 
     .case-page {
       padding-top: 70px;
-    }
-
-    .case-page section {
-      padding: 90px 8%;
     }
 
     .case-container {
@@ -151,145 +112,8 @@
       margin: auto;
     }
 
-
-    /* =========================
-       HERO
-    ========================= */
-
-    .case-hero {
-      padding: 100px 8% 80px !important;
-      background: #F8FAFB;
-    }
-
-    .case-back {
-      display: inline-block;
-
-      margin-bottom: 30px;
-
-      color: #165E63;
-
-      font-size: 14px;
-      font-weight: 600;
-
-      transition: .3s ease;
-    }
-
-    .case-back:hover {
-      transform: translateX(-4px);
-    }
-
-    .case-label {
-      display: inline-block;
-
-      margin-bottom: 18px;
-
-      padding: 7px 14px;
-
-      border-radius: 50px;
-
-      background: #E7F4F4;
-      color: #165E63;
-
-      font-size: 12px;
-      font-weight: 600;
-    }
-
-    .case-hero h1 {
-      max-width: 850px;
-
-      margin-bottom: 20px;
-
-      color: #1f2937;
-
-      font-size: clamp(42px, 6vw, 65px);
-
-      line-height: 1.1;
-
-      letter-spacing: -.04em;
-    }
-
-    .case-hero h1 span {
-      color: #165E63;
-    }
-
-    .case-intro {
-      max-width: 700px;
-
-      margin-bottom: 30px;
-
-      color: #666;
-
-      font-size: 17px;
-    }
-
-    .case-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-
-      margin-bottom: 40px;
-    }
-
-    .case-tags span {
-      padding: 7px 13px;
-
-      border-radius: 50px;
-
-      background: #E7F4F4;
-      color: #165E63;
-
-      font-size: 12px;
-      font-weight: 600;
-    }
-
-
-    /* =========================
-       META
-    ========================= */
-
-    .case-meta {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .case-meta-card {
-      padding: 22px;
-
-      background: #fff;
-
-      border-radius: 16px;
-
-      border-top: 3px solid #165E63;
-
-      box-shadow: 0 8px 25px rgba(0,0,0,.05);
-    }
-
-    .case-meta-card small {
-      display: block;
-
-      margin-bottom: 5px;
-
-      color: #888;
-
-      font-size: 11px;
-
-      text-transform: uppercase;
-
-      letter-spacing: .08em;
-    }
-
-    .case-meta-card strong {
-      color: #165E63;
-      font-size: 15px;
-    }
-
-
-    /* =========================
-       SECTIONS
-    ========================= */
-
     .case-section {
+      padding: 90px 8%;
       background: #fff;
     }
 
@@ -297,234 +121,254 @@
       background: #F5F9FA;
     }
 
+    /* HERO */
+
+    .case-hero {
+      padding: 100px 8% 80px;
+      background: #F8FAFB;
+    }
+
+    .case-back {
+      display: inline-block;
+      color: #165E63;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+
+    .case-label {
+      display: inline-block;
+      padding: 7px 15px;
+      margin-bottom: 18px;
+      border-radius: 30px;
+      background: #E7F4F4;
+      color: #165E63;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .case-hero h1 {
+      max-width: 850px;
+      color: #1f2937;
+      font-size: clamp(42px, 6vw, 65px);
+      line-height: 1.1;
+      margin-bottom: 22px;
+    }
+
+    .case-hero h1 span {
+      color: #165E63;
+    }
+
+    .case-intro {
+      max-width: 750px;
+      color: #666;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .case-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 40px;
+    }
+
+    .case-tags span {
+      padding: 7px 13px;
+      border-radius: 30px;
+      background: #E7F4F4;
+      color: #165E63;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .case-meta {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
+    }
+
+    .case-meta-card {
+      padding: 24px;
+      background: #fff;
+      border-radius: 16px;
+      border-top: 4px solid #165E63;
+      box-shadow: 0 8px 25px rgba(0,0,0,.06);
+    }
+
+    .case-meta-card small {
+      display: block;
+      color: #777;
+      font-size: 12px;
+      margin-bottom: 5px;
+    }
+
+    .case-meta-card strong {
+      color: #165E63;
+      font-size: 15px;
+    }
+
+    /* HEADINGS */
+
     .case-heading {
-      max-width: 720px;
-
-      margin: 0 auto 45px;
-
       text-align: center;
+      margin-bottom: 45px;
     }
 
     .number {
       display: block;
-
-      margin-bottom: 7px;
-
       color: #3AA6A0;
-
       font-size: 12px;
       font-weight: 700;
-
       letter-spacing: .1em;
+      margin-bottom: 8px;
     }
 
     .case-heading h2 {
-      margin-bottom: 12px;
-
       color: #165E63;
-
-      font-size: 36px;
-
+      font-size: 38px;
       line-height: 1.2;
+      margin-bottom: 12px;
     }
 
     .case-heading p {
+      max-width: 680px;
+      margin: auto;
       color: #666;
-      font-size: 15px;
     }
 
+    /* CARDS */
 
-    /* =========================
-       CHALLENGE / SOLUTION
-    ========================= */
-
-    .case-two-col {
+    .two-col {
       display: grid;
-
       grid-template-columns: repeat(2,1fr);
-
       gap: 25px;
     }
 
     .case-card {
-      padding: 30px;
-
+      padding: 32px;
       background: #fff;
-
       border: 1px solid #edf0f1;
-
       border-radius: 18px;
-
-      box-shadow: 0 8px 25px rgba(0,0,0,.05);
+      box-shadow: 0 8px 25px rgba(0,0,0,.06);
     }
 
     .case-card .icon {
-      width: 42px;
-      height: 42px;
-
+      width: 45px;
+      height: 45px;
       display: flex;
       align-items: center;
       justify-content: center;
-
       margin-bottom: 18px;
-
       border-radius: 50%;
-
       background: #E7F4F4;
       color: #165E63;
-
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 700;
     }
 
     .case-card h3 {
-      margin-bottom: 10px;
-
       color: #165E63;
-
       font-size: 22px;
+      margin-bottom: 12px;
     }
 
     .case-card p {
       color: #666;
-
-      font-size: 14px;
-
-      line-height: 1.8;
+      font-size: 15px;
     }
 
+    /* IMPLEMENTATION */
 
-    /* =========================
-       IMPLEMENTATION
-    ========================= */
-
-    .implementation-grid {
+    .implementation {
       display: grid;
-
       grid-template-columns: 1fr 1fr;
-
-      gap: 35px;
+      gap: 40px;
     }
 
-    .implementation-list {
+    .steps {
       list-style: none;
     }
 
-    .implementation-list li {
+    .steps li {
+      padding: 15px 0 15px 35px;
+      border-bottom: 1px solid #ddd;
       position: relative;
-
-      padding: 14px 0 14px 34px;
-
-      border-bottom: 1px solid #e2e7e8;
-
       color: #555;
-
-      font-size: 14px;
     }
 
-    .implementation-list li::before {
+    .steps li::before {
       content: "✓";
-
       position: absolute;
-
       left: 0;
-      top: 14px;
-
-      width: 22px;
-      height: 22px;
-
+      top: 15px;
+      width: 23px;
+      height: 23px;
       display: flex;
       align-items: center;
       justify-content: center;
-
       border-radius: 50%;
-
       background: #E7F4F4;
       color: #165E63;
-
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 700;
     }
 
-    .tech-panel {
-      padding: 28px;
-
+    .tech-box {
+      padding: 30px;
       background: #fff;
-
       border-radius: 18px;
-
-      box-shadow: 0 8px 25px rgba(0,0,0,.05);
+      box-shadow: 0 8px 25px rgba(0,0,0,.06);
     }
 
-    .tech-panel h3 {
-      margin-bottom: 18px;
-
+    .tech-box h3 {
       color: #165E63;
-
-      font-size: 20px;
+      margin-bottom: 18px;
     }
 
     .tech-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 9px;
     }
 
     .tech-list span {
-      padding: 7px 12px;
-
-      border-radius: 50px;
-
+      padding: 8px 13px;
       background: #E7F4F4;
       color: #165E63;
-
-      font-size: 12px;
+      border-radius: 30px;
+      font-size: 13px;
       font-weight: 600;
     }
 
+    /* FLOW */
 
-    /* =========================
-       FLOW
-    ========================= */
-
-    .case-flow {
+    .flow {
       display: flex;
-
       align-items: center;
       justify-content: center;
-
-      gap: 10px;
-
+      gap: 12px;
       flex-wrap: wrap;
     }
 
     .flow-item {
-      min-width: 165px;
-
+      min-width: 170px;
       padding: 20px;
-
-      background: #fff;
-
-      border: 1px solid #e7eeee;
-
-      border-radius: 16px;
-
       text-align: center;
-
-      box-shadow: 0 8px 20px rgba(0,0,0,.05);
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,.06);
     }
 
     .flow-item strong {
       display: block;
-
       color: #165E63;
-
       font-size: 14px;
     }
 
     .flow-item small {
-      color: #888;
-      font-size: 11px;
+      color: #777;
+      font-size: 12px;
     }
 
     .flow-arrow {
@@ -532,299 +376,166 @@
       font-size: 22px;
     }
 
+    /* CODE */
 
-    /* =========================
-       CODE
-    ========================= */
-
-    .code-wrapper {
+    .code-box {
       max-width: 900px;
-
       margin: auto;
-
-      overflow: hidden;
-
-      border-radius: 18px;
-
       background: #161c1d;
-
-      box-shadow: 0 15px 40px rgba(0,0,0,.12);
+      border-radius: 18px;
+      overflow: hidden;
     }
 
     .code-header {
+      padding: 14px 18px;
       display: flex;
-
-      align-items: center;
       justify-content: space-between;
-
-      padding: 13px 18px;
-
+      align-items: center;
       background: #0F4548;
-
       color: #fff;
+      font-size: 13px;
     }
 
-    .code-header span {
+    .copy-code {
+      border: 0;
+      padding: 7px 13px;
+      border-radius: 20px;
+      background: #fff;
+      color: #165E63;
+      cursor: pointer;
       font-size: 12px;
       font-weight: 600;
     }
 
-    .copy-code {
-      padding: 7px 13px;
-
-      border: 0;
-      border-radius: 20px;
-
-      background: #fff;
-      color: #165E63;
-
-      font-size: 11px;
-      font-weight: 600;
-
-      cursor: pointer;
-    }
-
-    .code-wrapper pre {
+    .code-box pre {
       margin: 0;
-
       padding: 25px;
-
       overflow-x: auto;
-
-      color: #e9eeee;
-
-      font-family: "Courier New", monospace;
-
+      color: #eee;
       font-size: 13px;
-
       line-height: 1.7;
     }
 
     .code-note {
-      max-width: 850px;
-
+      max-width: 800px;
       margin: 18px auto 0;
-
-      color: #888;
-
-      font-size: 12px;
-
       text-align: center;
+      color: #777;
+      font-size: 13px;
     }
 
+    /* OUTCOME */
 
-    /* =========================
-       OUTCOME
-    ========================= */
-
-    .outcome-card {
+    .outcome {
       max-width: 900px;
-
       margin: auto;
-
       padding: 45px;
-
       border-radius: 22px;
-
-      background: linear-gradient(
-        135deg,
-        #165E63,
-        #3AA6A0
-      );
-
+      background: linear-gradient(135deg,#165E63,#3AA6A0);
       color: #fff;
-
-      box-shadow: 0 18px 40px rgba(22,94,99,.2);
     }
 
-    .outcome-card .number {
+    .outcome .number {
       color: #D9FFFF;
     }
 
-    .outcome-card h2 {
-      margin: 10px 0 18px;
-
+    .outcome h2 {
+      margin: 10px 0 15px;
       color: #fff;
-
-      font-size: 34px;
-
-      line-height: 1.25;
+      font-size: 35px;
     }
 
-    .outcome-card p {
+    .outcome p {
       max-width: 700px;
-
-      margin-bottom: 12px;
-
       color: rgba(255,255,255,.9);
-
-      font-size: 14px;
+      margin-bottom: 12px;
     }
 
+    /* TAKEAWAYS */
 
-    /* =========================
-       TAKEAWAYS
-    ========================= */
-
-    .takeaway-grid {
+    .takeaways {
       display: grid;
-
       grid-template-columns: repeat(4,1fr);
-
       gap: 18px;
     }
 
-    .takeaway-card {
-      padding: 25px 20px;
-
+    .takeaway {
+      padding: 25px;
       background: #fff;
-
       border-radius: 16px;
-
-      border-bottom: 3px solid #3AA6A0;
-
-      box-shadow: 0 8px 22px rgba(0,0,0,.05);
+      border-bottom: 4px solid #3AA6A0;
+      box-shadow: 0 8px 20px rgba(0,0,0,.06);
     }
 
-    .takeaway-card h3 {
-      margin-bottom: 7px;
-
+    .takeaway h3 {
       color: #165E63;
-
       font-size: 17px;
+      margin-bottom: 8px;
     }
 
-    .takeaway-card p {
+    .takeaway p {
       color: #666;
-
-      font-size: 12px;
-
-      line-height: 1.7;
+      font-size: 13px;
     }
 
-
-    /* =========================
-       CTA
-    ========================= */
+    /* CTA */
 
     .case-cta {
+      padding: 80px 8%;
       text-align: center;
-
       background: #fff;
     }
 
     .case-cta h2 {
-      margin-bottom: 10px;
-
       color: #165E63;
-
-      font-size: 34px;
+      font-size: 36px;
+      margin-bottom: 10px;
     }
 
     .case-cta p {
-      max-width: 600px;
-
-      margin: 0 auto 22px;
-
       color: #666;
-
-      font-size: 14px;
+      margin-bottom: 25px;
     }
 
     .primary-btn {
-      display: inline-flex;
-
+      display: inline-block;
       padding: 12px 22px;
-
-      border-radius: 50px;
-
+      border-radius: 30px;
       background: #165E63;
       color: #fff;
-
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 600;
-
-      transition: .3s ease;
     }
 
     .primary-btn:hover {
       background: #0F4548;
-
-      transform: translateY(-2px);
     }
 
-
-    /* =========================
-       SCROLL BAR
-    ========================= */
-
-    .scroll-progress {
-      position: fixed;
-
-      top: 0;
-      left: 0;
-
-      width: 0;
-      height: 3px;
-
-      z-index: 2000;
-
-      background: linear-gradient(
-        90deg,
-        #165E63,
-        #3AA6A0
-      );
-    }
-
-
-    /* =========================
-       BACK TO TOP
-    ========================= */
+    /* BACK TO TOP */
 
     .back-to-top {
       position: fixed;
-
-      right: 25px;
-      bottom: 25px;
-
-      width: 44px;
-      height: 44px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
+      right: 22px;
+      bottom: 22px;
+      width: 45px;
+      height: 45px;
       border: 0;
       border-radius: 50%;
-
       background: #165E63;
       color: #fff;
-
-      font-size: 17px;
-
       cursor: pointer;
-
       opacity: 0;
       visibility: hidden;
-
-      transform: translateY(10px);
-
-      transition: .3s ease;
-
+      transition: .3s;
       z-index: 900;
     }
 
     .back-to-top.show {
       opacity: 1;
       visibility: visible;
-
-      transform: translateY(0);
     }
 
-
-    /* =========================
-       DARK MODE
-    ========================= */
+    /* DARK MODE */
 
     body.dark-mode {
       background: #121212;
@@ -832,127 +543,98 @@
     }
 
     body.dark-mode .navbar {
-      background: rgba(23,23,23,.95);
+      background: rgba(20,20,20,.95);
     }
 
     body.dark-mode .nav-links a {
       color: #ddd;
     }
 
-    body.dark-mode .nav-links a:hover {
-      color: #59C7C2;
-    }
-
     body.dark-mode .case-hero,
-    body.dark-mode .case-section,
-    body.dark-mode .case-cta {
+    body.dark-mode .case-cta,
+    body.dark-mode .case-section {
       background: #171717;
     }
 
     body.dark-mode .case-section.alt {
-      background: #1A1A1A;
+      background: #1d1d1d;
     }
 
     body.dark-mode .case-hero h1 {
       color: #fff;
     }
 
-    body.dark-mode .case-heading h2,
-    body.dark-mode .case-card h3,
-    body.dark-mode .tech-panel h3,
-    body.dark-mode .takeaway-card h3,
-    body.dark-mode .case-cta h2 {
-      color: #59C7C2;
-    }
-
     body.dark-mode .case-intro,
     body.dark-mode .case-heading p,
     body.dark-mode .case-card p,
-    body.dark-mode .implementation-list li,
+    body.dark-mode .steps li,
     body.dark-mode .case-cta p {
       color: #ccc;
     }
 
     body.dark-mode .case-meta-card,
     body.dark-mode .case-card,
-    body.dark-mode .tech-panel,
+    body.dark-mode .tech-box,
     body.dark-mode .flow-item,
-    body.dark-mode .takeaway-card {
+    body.dark-mode .takeaway {
       background: #222;
       border-color: #333;
     }
 
-    body.dark-mode .case-meta-card small,
-    body.dark-mode .flow-item small {
-      color: #aaa;
-    }
-
-    body.dark-mode .theme-toggle {
-      background: #333;
+    body.dark-mode .case-heading h2,
+    body.dark-mode .case-card h3,
+    body.dark-mode .tech-box h3,
+    body.dark-mode .takeaway h3,
+    body.dark-mode .case-cta h2 {
       color: #59C7C2;
     }
 
-
-    /* =========================
-       MOBILE
-    ========================= */
+    /* MOBILE */
 
     @media (max-width: 900px) {
 
-      .case-meta {
+      .case-meta,
+      .implementation,
+      .two-col {
         grid-template-columns: 1fr;
       }
 
-      .implementation-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .takeaway-grid {
+      .takeaways {
         grid-template-columns: repeat(2,1fr);
       }
 
     }
 
-
-    @media (max-width: 768px) {
-
-      .navbar {
-        padding: 15px 6%;
-      }
+    @media (max-width: 700px) {
 
       .nav-links {
         display: none;
       }
 
-      .case-page section {
-        padding: 70px 6%;
+      .case-hero,
+      .case-section,
+      .case-cta {
+        padding-left: 6%;
+        padding-right: 6%;
       }
 
       .case-hero {
-        padding: 90px 6% 65px !important;
+        padding-top: 90px;
       }
 
       .case-hero h1 {
         font-size: 42px;
       }
 
-      .case-intro {
-        font-size: 15px;
-      }
-
-      .case-two-col {
-        grid-template-columns: 1fr;
-      }
-
       .case-heading h2 {
         font-size: 30px;
       }
 
-      .takeaway-grid {
+      .takeaways {
         grid-template-columns: 1fr;
       }
 
-      .case-flow {
+      .flow {
         flex-direction: column;
       }
 
@@ -964,21 +646,8 @@
         width: 100%;
       }
 
-      .outcome-card {
-        padding: 32px 25px;
-      }
-
-      .outcome-card h2 {
-        font-size: 28px;
-      }
-
-      .code-wrapper pre {
-        font-size: 11px;
-      }
-
-      .back-to-top {
-        right: 18px;
-        bottom: 18px;
+      .outcome {
+        padding: 30px 25px;
       }
 
     }
@@ -987,105 +656,266 @@
 
 </head>
 
-
 <body>
 
-
-  <!-- =========================
-       NAVBAR
-  ========================= -->
+  <!-- NAVBAR -->
 
   <header>
 
-    <div class="navbar">
+```
+<div class="navbar">
 
-      <a
-        href="index.html"
-        class="logo"
-      >
-        Donna<span>.</span>
-      </a>
+  <a href="index.html" class="logo">
+    Donna<span>.</span>
+  </a>
 
+  <nav class="nav-links">
 
-      <nav class="nav-links">
+    <a href="index.html#about">About</a>
 
-        <a href="index.html#about">
-          About
-        </a>
+    <a href="index.html#skills">Skills</a>
 
-        <a href="index.html#skills">
-          Skills
-        </a>
+    <a href="index.html#projects">Projects</a>
 
-        <a href="index.html#projects">
-          Projects
-        </a>
+    <a href="index.html#contact">Contact</a>
 
-        <a href="index.html#contact">
-          Contact
-        </a>
+  </nav>
 
-      </nav>
+  <button
+    class="theme-toggle"
+    id="themeToggle"
+    type="button"
+    aria-label="Toggle dark mode"
+  >
+    ☾
+  </button>
 
-
-      <button
-        class="theme-toggle"
-        id="themeToggle"
-        type="button"
-        aria-label="Toggle dark mode"
-      >
-        ☾
-      </button>
-
-    </div>
+</div>
+```
 
   </header>
 
-
-  <!-- =========================
-       PAGE
-  ========================= -->
-
   <main class="case-page">
 
+```
+<!-- HERO -->
 
-    <!-- HERO -->
+<section class="case-hero">
 
-    <section class="case-hero">
+  <div class="case-container">
 
-      <div class="case-container">
+    <a
+      href="index.html#projects"
+      class="case-back"
+    >
+      ← Back to Projects
+    </a>
 
+    <span class="case-label">
+      Shopify + Klaviyo
+    </span>
 
-        <a
-          href="index.html#projects"
-          class="case-back"
-        >
-          ← Back to Projects
-        </a>
+    <h1>
+      Custom Klaviyo
+      <span>Event Signup Form</span>
+    </h1>
 
+    <p class="case-intro">
 
-        <span class="case-label">
+      Created a dedicated Shopify page for
+      Klaviyo signup forms used for events.
+      I also added custom JavaScript so the
+      correct form opens directly from the page.
+
+    </p>
+
+    <div class="case-tags">
+
+      <span>Shopify</span>
+      <span>Liquid</span>
+      <span>Klaviyo</span>
+      <span>JavaScript</span>
+      <span>HTML</span>
+      <span>CSS</span>
+
+    </div>
+
+    <div class="case-meta">
+
+      <div class="case-meta-card">
+
+        <small>Platform</small>
+
+        <strong>
           Shopify + Klaviyo
-        </span>
+        </strong>
+
+      </div>
+
+      <div class="case-meta-card">
+
+        <small>Technology</small>
+
+        <strong>
+          Liquid / JavaScript
+        </strong>
+
+      </div>
+
+      <div class="case-meta-card">
+
+        <small>Project Type</small>
+
+        <strong>
+          Event Signup Form
+        </strong>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
 
-        <h1>
-          Custom Klaviyo
-          <span>Event Signup Form</span>
-        </h1>
+<!-- CHALLENGE -->
 
+<section class="case-section">
 
-        <p class="case-intro">
+  <div class="case-container">
 
-          I created a custom Shopify page for an event
-          signup form. The Klaviyo form was added to the
-          page and custom JavaScript was used to remove
-          the default delay.
+    <div class="case-heading">
+
+      <span class="number">
+        01 — THE CHALLENGE
+      </span>
+
+      <h2>
+        The Klaviyo Form Had a Delay
+      </h2>
+
+      <p>
+
+        The signup forms were created in Klaviyo
+        and used for different events. The default
+        popup behavior was not ideal for this type
+        of event signup.
+
+      </p>
+
+    </div>
+
+    <div class="two-col">
+
+      <div class="case-card">
+
+        <div class="icon">01</div>
+
+        <h3>
+          The Problem
+        </h3>
+
+        <p>
+
+          Visitors had to wait for the Klaviyo
+          popup to appear. For event registration,
+          I wanted the signup form to be available
+          right away.
 
         </p>
 
+      </div>
 
-        <div class="case-tags">
+      <div class="case-card">
+
+        <div class="icon">02</div>
+
+        <h3>
+          The Solution
+        </h3>
+
+        <p>
+
+          I created a custom Shopify page template
+          and used JavaScript to open the Klaviyo
+          form directly instead of waiting for the
+          normal popup trigger.
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- IMPLEMENTATION -->
+
+<section class="case-section alt">
+
+  <div class="case-container">
+
+    <div class="case-heading">
+
+      <span class="number">
+        02 — IMPLEMENTATION
+      </span>
+
+      <h2>
+        How I Set It Up
+      </h2>
+
+      <p>
+
+        I kept the existing Klaviyo forms and
+        connected them to a custom Shopify page.
+
+      </p>
+
+    </div>
+
+    <div class="implementation">
+
+      <div>
+
+        <ul class="steps">
+
+          <li>
+            Created a custom Shopify page template.
+          </li>
+
+          <li>
+            Added the Klaviyo form to the page.
+          </li>
+
+          <li>
+            Added JavaScript to open the form.
+          </li>
+
+          <li>
+            Used the event name in the URL to
+            choose the correct form.
+          </li>
+
+          <li>
+            Tested the different event forms.
+          </li>
+
+        </ul>
+
+      </div>
+
+      <div class="tech-box">
+
+        <h3>
+          Tools Used
+        </h3>
+
+        <div class="tech-list">
 
           <span>Shopify</span>
           <span>Liquid</span>
@@ -1096,591 +926,358 @@
 
         </div>
 
+      </div>
 
-        <div class="case-meta">
+    </div>
 
+  </div>
 
-          <div class="case-meta-card">
-
-            <small>
-              Platform
-            </small>
-
-            <strong>
-              Shopify + Klaviyo
-            </strong>
-
-          </div>
+</section>
 
 
-          <div class="case-meta-card">
+<!-- FLOW -->
 
-            <small>
-              Tools
-            </small>
+<section class="case-section">
 
-            <strong>
-              Liquid / JavaScript
-            </strong>
+  <div class="case-container">
 
-          </div>
+    <div class="case-heading">
 
+      <span class="number">
+        03 — HOW IT WORKS
+      </span>
 
-          <div class="case-meta-card">
+      <h2>
+        Simple Setup
+      </h2>
 
-            <small>
-              Type
-            </small>
+      <p>
 
-            <strong>
-              Event Signup Form
-            </strong>
+        The URL tells the script which Klaviyo
+        form should be opened.
 
-          </div>
+      </p>
 
+    </div>
 
-        </div>
+    <div class="flow">
+
+      <div class="flow-item">
+
+        <strong>
+          Event Link
+        </strong>
+
+        <small>
+          URL contains event
+        </small>
 
       </div>
 
-    </section>
+      <div class="flow-arrow">
+        →
+      </div>
 
+      <div class="flow-item">
 
-    <!-- CHALLENGE -->
+        <strong>
+          Shopify Page
+        </strong>
 
-    <section class="case-section">
-
-      <div class="case-container">
-
-
-        <div class="case-heading">
-
-          <span class="number">
-            01 — THE CHALLENGE
-          </span>
-
-          <h2>
-            The Form Had a Delay
-          </h2>
-
-          <p>
-
-            The event signup form was using Klaviyo's
-            default popup behavior, which added a delay
-            before the form was shown.
-
-          </p>
-
-        </div>
-
-
-        <div class="case-two-col">
-
-
-          <div class="case-card">
-
-            <div class="icon">
-              01
-            </div>
-
-            <h3>
-              The Problem
-            </h3>
-
-            <p>
-
-              Visitors had to wait for the Klaviyo
-              popup to appear before they could access
-              the event signup form.
-
-            </p>
-
-          </div>
-
-
-          <div class="case-card">
-
-            <div class="icon">
-              02
-            </div>
-
-            <h3>
-              What I Did
-            </h3>
-
-            <p>
-
-              I created a separate Shopify page template
-              and added the Klaviyo signup form directly
-              to the page. I then used JavaScript to
-              control the form display and remove the delay.
-
-            </p>
-
-          </div>
-
-
-        </div>
+        <small>
+          Custom template
+        </small>
 
       </div>
 
-    </section>
+      <div class="flow-arrow">
+        →
+      </div>
 
+      <div class="flow-item">
 
-    <!-- IMPLEMENTATION -->
+        <strong>
+          JavaScript
+        </strong>
 
-    <section class="case-section alt">
-
-      <div class="case-container">
-
-
-        <div class="case-heading">
-
-          <span class="number">
-            02 — IMPLEMENTATION
-          </span>
-
-          <h2>
-            How I Built It
-          </h2>
-
-          <p>
-
-            I kept the existing Klaviyo form and used
-            a custom Shopify template to give it its
-            own page.
-
-          </p>
-
-        </div>
-
-
-        <div class="implementation-grid">
-
-
-          <div>
-
-            <ul class="implementation-list">
-
-              <li>
-                Created a custom Shopify page template.
-              </li>
-
-              <li>
-                Added the existing Klaviyo signup form.
-              </li>
-
-              <li>
-                Added custom JavaScript for the form behavior.
-              </li>
-
-              <li>
-                Removed the default display delay.
-              </li>
-
-              <li>
-                Tested the page and form behavior.
-
-              </li>
-
-            </ul>
-
-          </div>
-
-
-          <div class="tech-panel">
-
-            <h3>
-              Tools Used
-            </h3>
-
-            <div class="tech-list">
-
-              <span>Shopify</span>
-              <span>Liquid</span>
-              <span>Klaviyo</span>
-              <span>JavaScript</span>
-              <span>HTML</span>
-              <span>CSS</span>
-
-            </div>
-
-          </div>
-
-
-        </div>
+        <small>
+          Checks the event
+        </small>
 
       </div>
 
-    </section>
+      <div class="flow-arrow">
+        →
+      </div>
 
+      <div class="flow-item">
 
-    <!-- FLOW -->
+        <strong>
+          Klaviyo Form
+        </strong>
 
-    <section class="case-section">
-
-      <div class="case-container">
-
-
-        <div class="case-heading">
-
-          <span class="number">
-            03 — HOW IT WORKS
-          </span>
-
-          <h2>
-            Simple Setup
-          </h2>
-
-          <p>
-
-            The Klaviyo form is still used for collecting
-            the signup information. Shopify controls the
-            page where the form is displayed.
-
-          </p>
-
-        </div>
-
-
-        <div class="case-flow">
-
-
-          <div class="flow-item">
-
-            <strong>
-              Klaviyo Form
-            </strong>
-
-            <small>
-              Existing signup form
-            </small>
-
-          </div>
-
-
-          <div class="flow-arrow">
-            →
-          </div>
-
-
-          <div class="flow-item">
-
-            <strong>
-              Shopify Template
-            </strong>
-
-            <small>
-              Custom page
-            </small>
-
-          </div>
-
-
-          <div class="flow-arrow">
-            →
-          </div>
-
-
-          <div class="flow-item">
-
-            <strong>
-              JavaScript
-            </strong>
-
-            <small>
-              Form display
-            </small>
-
-          </div>
-
-
-          <div class="flow-arrow">
-            →
-          </div>
-
-
-          <div class="flow-item">
-
-            <strong>
-              Event Signup
-            </strong>
-
-            <small>
-              Form is ready
-            </small>
-
-          </div>
-
-
-        </div>
+        <small>
+          Correct form opens
+        </small>
 
       </div>
 
-    </section>
+    </div>
+
+  </div>
+
+</section>
 
 
-    <!-- CODE -->
+<!-- CODE -->
 
-    <section class="case-section alt">
+<section class="case-section alt">
 
-      <div class="case-container">
+  <div class="case-container">
 
+    <div class="case-heading">
 
-        <div class="case-heading">
+      <span class="number">
+        04 — CODE
+      </span>
 
-          <span class="number">
-            04 — CODE
-          </span>
+      <h2>
+        JavaScript Used
+      </h2>
 
-          <h2>
-            JavaScript
-          </h2>
+      <p>
 
-          <p>
+        The script checks the event name in the URL
+        and opens the matching Klaviyo form.
 
-            A small JavaScript function was added to
-            the Shopify page to work with the Klaviyo
-            form after the page loads.
+      </p>
 
-          </p>
+    </div>
 
-        </div>
+    <div class="code-box">
 
+      <div class="code-header">
 
-        <div class="code-wrapper">
+        <span>
+          JavaScript
+        </span>
 
+        <button
+          class="copy-code"
+          id="copyCode"
+          type="button"
+        >
+          Copy Code
+        </button>
 
-          <div class="code-header">
+      </div>
 
-            <span>
-              JavaScript
-            </span>
+      <pre id="codeBlock"><code>document.addEventListener("DOMContentLoaded", function() {
+```
 
-            <button
-              class="copy-code"
-              id="copyCode"
-              type="button"
-            >
-              Copy Code
-            </button>
+const urlParams = new URLSearchParams(window.location.search);
+const event = urlParams.get("event");
 
-          </div>
+window._klOnsite = window._klOnsite || [];
 
+if (event === "dti") {
+window._klOnsite.push(['openForm', 'UKUJt5']);
+}
 
-          <pre id="codeBlock"><code>document.addEventListener("DOMContentLoaded", function () {
+if (event === "women") {
+window._klOnsite.push(['openForm', 'T8gRAu']);
+}
 
-  const form = document.querySelector(
-    '[data-testid="form-component"]'
-  );
-
-  if (!form) return;
-
-  form.style.display = "block";
+if (event === "greenhills") {
+window._klOnsite.push(['openForm', 'WVPTyU']);
+}
 
 });</code></pre>
 
+```
+    </div>
 
-        </div>
+    <p class="code-note">
 
+      Each event has its own Klaviyo form ID.
+      The script checks the URL and opens the
+      correct form.
 
-        <p class="code-note">
+    </p>
 
-          This is a simplified example of the JavaScript
-          used to control the form display. The actual
-          selector can depend on the Klaviyo form setup.
+  </div>
 
-        </p>
+</section>
 
 
-      </div>
+<!-- OUTCOME -->
 
-    </section>
+<section class="case-section">
 
+  <div class="case-container">
 
-    <!-- OUTCOME -->
+    <div class="outcome">
 
-    <section class="case-section">
+      <span class="number">
+        05 — OUTCOME
+      </span>
 
-      <div class="case-container">
+      <h2>
+        Easier Event Signup
+      </h2>
 
+      <p>
 
-        <div class="outcome-card">
+        The event signup forms could be opened
+        directly from a dedicated Shopify page
+        instead of waiting for the normal popup
+        behavior.
 
-          <span class="number">
-            05 — RESULT
-          </span>
+      </p>
 
-          <h2>
-            A Simpler Signup Page
-          </h2>
+      <p>
 
-          <p>
+        The setup also allowed different event
+        links to open different Klaviyo forms.
 
-            The event signup form now has its own Shopify
-            page instead of relying on the default popup
-            display.
+      </p>
 
-          </p>
+    </div>
 
-          <p>
+  </div>
 
-            I was able to keep the existing Klaviyo form
-            while having more control over how and when
-            it is displayed.
+</section>
 
-          </p>
 
-        </div>
+<!-- TAKEAWAYS -->
 
-      </div>
+<section class="case-section alt">
 
-    </section>
+  <div class="case-container">
 
+    <div class="case-heading">
 
-    <!-- TAKEAWAYS -->
+      <span class="number">
+        06 — KEY TAKEAWAYS
+      </span>
 
-    <section class="case-section alt">
+      <h2>
+        What I Worked On
+      </h2>
 
-      <div class="case-container">
+    </div>
 
+    <div class="takeaways">
 
-        <div class="case-heading">
+      <div class="takeaway">
 
-          <span class="number">
-            06 — KEY TAKEAWAYS
-          </span>
-
-          <h2>
-            What I Used
-          </h2>
-
-        </div>
-
-
-        <div class="takeaway-grid">
-
-
-          <div class="takeaway-card">
-
-            <h3>
-              Shopify
-            </h3>
-
-            <p>
-              Created a custom page template for
-              the event signup page.
-            </p>
-
-          </div>
-
-
-          <div class="takeaway-card">
-
-            <h3>
-              Klaviyo
-            </h3>
-
-            <p>
-              Used the existing Klaviyo signup form
-              for collecting event registrations.
-            </p>
-
-          </div>
-
-
-          <div class="takeaway-card">
-
-            <h3>
-              JavaScript
-            </h3>
-
-            <p>
-              Added custom code to control the
-              form display.
-            </p>
-
-          </div>
-
-
-          <div class="takeaway-card">
-
-            <h3>
-              Liquid
-            </h3>
-
-            <p>
-              Used Shopify Liquid when creating the
-              custom page template.
-            </p>
-
-          </div>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- CTA -->
-
-    <section class="case-cta">
-
-      <div class="case-container">
-
-        <h2>
-          More Shopify Projects
-        </h2>
+        <h3>
+          Shopify
+        </h3>
 
         <p>
-
-          See more of my Shopify, Klaviyo, and
-          custom-code projects.
-
+          Created a custom page template
+          for the event signup page.
         </p>
-
-        <a
-          href="index.html#projects"
-          class="primary-btn"
-        >
-          ← Back to Projects
-        </a>
 
       </div>
 
-    </section>
+      <div class="takeaway">
 
+        <h3>
+          Klaviyo
+        </h3>
+
+        <p>
+          Used existing Klaviyo forms
+          for event registration.
+        </p>
+
+      </div>
+
+      <div class="takeaway">
+
+        <h3>
+          JavaScript
+        </h3>
+
+        <p>
+          Added simple logic to open
+          the correct form.
+        </p>
+
+      </div>
+
+      <div class="takeaway">
+
+        <h3>
+          Problem Solving
+        </h3>
+
+        <p>
+          Found a simple way to work
+          around the default popup behavior.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="case-cta">
+
+  <div class="case-container">
+
+    <h2>
+      More Shopify Projects
+    </h2>
+
+    <p>
+
+      See more of my Shopify, Klaviyo,
+      CRO, and custom-code work.
+
+    </p>
+
+    <a
+      href="index.html#projects"
+      class="primary-btn"
+    >
+      ← Back to Projects
+    </a>
+
+  </div>
+
+</section>
+```
 
   </main>
 
-
-  <!-- SCROLL PROGRESS -->
-
-  <div
-    class="scroll-progress"
-    id="scrollProgress"
-  ></div>
-
-
   <!-- BACK TO TOP -->
 
-  <button
-    class="back-to-top"
-    id="backToTop"
-    type="button"
-    aria-label="Back to top"
-  >
-    ↑
-  </button>
+<button
+class="back-to-top"
+id="backToTop"
+type="button"
+aria-label="Back to top"
 
+>
+
+```
+↑
+```
+
+  </button>
 
   <script>
 
-    /* =========================
-       DARK MODE
-    ========================= */
+    /* DARK MODE */
 
     const themeToggle =
       document.getElementById("themeToggle");
@@ -1689,14 +1286,11 @@
       localStorage.getItem("theme");
 
     if (savedTheme === "dark") {
-
       document.body.classList.add("dark-mode");
-
       themeToggle.textContent = "☀";
-
     }
 
-    themeToggle.addEventListener("click", function () {
+    themeToggle.addEventListener("click", function() {
 
       document.body.classList.toggle("dark-mode");
 
@@ -1714,9 +1308,7 @@
     });
 
 
-    /* =========================
-       COPY CODE
-    ========================= */
+    /* COPY CODE */
 
     const copyButton =
       document.getElementById("copyCode");
@@ -1724,7 +1316,7 @@
     const codeBlock =
       document.getElementById("codeBlock");
 
-    copyButton.addEventListener("click", async function () {
+    copyButton.addEventListener("click", async function() {
 
       try {
 
@@ -1734,20 +1326,16 @@
 
         copyButton.textContent = "Copied!";
 
-        setTimeout(function () {
-
+        setTimeout(function() {
           copyButton.textContent = "Copy Code";
-
         }, 1500);
 
       } catch (error) {
 
         copyButton.textContent = "Copy Failed";
 
-        setTimeout(function () {
-
+        setTimeout(function() {
           copyButton.textContent = "Copy Code";
-
         }, 1500);
 
       }
@@ -1755,61 +1343,22 @@
     });
 
 
-    /* =========================
-       SCROLL PROGRESS
-    ========================= */
-
-    const scrollProgress =
-      document.getElementById("scrollProgress");
-
-    function updateScrollProgress() {
-
-      const scrollTop = window.scrollY;
-
-      const documentHeight =
-        document.documentElement.scrollHeight -
-        document.documentElement.clientHeight;
-
-      const progress =
-        documentHeight > 0
-          ? (scrollTop / documentHeight) * 100
-          : 0;
-
-      scrollProgress.style.width =
-        progress + "%";
-
-    }
-
-    window.addEventListener(
-      "scroll",
-      updateScrollProgress
-    );
-
-    updateScrollProgress();
-
-
-    /* =========================
-       BACK TO TOP
-    ========================= */
+    /* BACK TO TOP */
 
     const backToTop =
       document.getElementById("backToTop");
 
-    window.addEventListener("scroll", function () {
+    window.addEventListener("scroll", function() {
 
-      if (window.scrollY > 500) {
-
+      if (window.scrollY > 400) {
         backToTop.classList.add("show");
-
       } else {
-
         backToTop.classList.remove("show");
-
       }
 
     });
 
-    backToTop.addEventListener("click", function () {
+    backToTop.addEventListener("click", function() {
 
       window.scrollTo({
         top: 0,
@@ -1818,32 +1367,8 @@
 
     });
 
-
-    /* =========================
-       NAVBAR SHADOW
-    ========================= */
-
-    const navbar =
-      document.querySelector(".navbar");
-
-    window.addEventListener("scroll", function () {
-
-      if (window.scrollY > 30) {
-
-        navbar.style.boxShadow =
-          "0 8px 30px rgba(0,0,0,.06)";
-
-      } else {
-
-        navbar.style.boxShadow = "none";
-
-      }
-
-    });
-
   </script>
 
 </body>
 
 </html>
-```
