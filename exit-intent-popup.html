@@ -1,0 +1,2070 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Dynamic Exit Intent Popup | Donna De Villa
+  </title>
+
+
+  <!-- GOOGLE FONT -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <style>
+
+    /* =========================
+       GLOBAL
+    ========================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #F8FAFB;
+      color: #333;
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+
+    /* =========================
+       NAVBAR
+    ========================= */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .navbar {
+      width: 100%;
+      padding: 18px 8%;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      background: rgba(255, 255, 255, .94);
+
+      backdrop-filter: blur(12px);
+
+      border-bottom:
+        1px solid rgba(22, 94, 99, .08);
+    }
+
+    .logo {
+      color: #165E63;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -.04em;
+    }
+
+    .logo span {
+      color: #3AA6A0;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      color: #444;
+      font-size: 14px;
+      font-weight: 500;
+      transition: .3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #165E63;
+    }
+
+    .theme-toggle {
+      width: 38px;
+      height: 38px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: #E7F4F4;
+      color: #165E63;
+
+      border: 0;
+      border-radius: 50%;
+
+      cursor: pointer;
+      font-size: 17px;
+    }
+
+
+    /* =========================
+       PAGE
+    ========================= */
+
+    .case-page {
+      padding-top: 70px;
+      background: #F8FAFB;
+    }
+
+    .case-page section {
+      padding: 90px 8%;
+    }
+
+    .case-container {
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .case-hero {
+      padding:
+        110px 8% 80px !important;
+
+      background: #F8FAFB;
+    }
+
+    .case-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      color: #165E63;
+
+      font-size: 14px;
+      font-weight: 600;
+
+      margin-bottom: 35px;
+
+      transition: .3s ease;
+    }
+
+    .case-back:hover {
+      transform: translateX(-4px);
+      color: #0F4548;
+    }
+
+    .case-label {
+      display: inline-block;
+
+      background: #E7F4F4;
+      color: #165E63;
+
+      padding: 8px 16px;
+
+      border-radius: 50px;
+
+      font-size: 13px;
+      font-weight: 600;
+
+      margin-bottom: 20px;
+    }
+
+    .case-hero h1 {
+      max-width: 900px;
+
+      color: #1f2937;
+
+      font-size:
+        clamp(42px, 6vw, 68px);
+
+      line-height: 1.1;
+
+      letter-spacing: -.04em;
+
+      margin-bottom: 22px;
+    }
+
+    .case-hero h1 span {
+      color: #165E63;
+    }
+
+    .case-intro {
+      max-width: 760px;
+
+      color: #555;
+
+      font-size: 18px;
+
+      margin-bottom: 35px;
+    }
+
+
+    /* =========================
+       TAGS
+    ========================= */
+
+    .case-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+
+      margin-bottom: 45px;
+    }
+
+    .case-tags span {
+      background: #E7F4F4;
+      color: #165E63;
+
+      padding: 8px 14px;
+
+      border-radius: 50px;
+
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+
+    /* =========================
+       META
+    ========================= */
+
+    .case-meta {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .case-meta-card {
+      background: #fff;
+
+      padding: 25px;
+
+      border-radius: 18px;
+
+      border-top:
+        4px solid #165E63;
+
+      box-shadow:
+        0 10px 30px rgba(0, 0, 0, .06);
+    }
+
+    .case-meta-card small {
+      display: block;
+
+      color: #777;
+
+      font-size: 12px;
+
+      text-transform: uppercase;
+
+      letter-spacing: .08em;
+
+      margin-bottom: 6px;
+    }
+
+    .case-meta-card strong {
+      color: #165E63;
+      font-size: 16px;
+    }
+
+
+    /* =========================
+       SECTIONS
+    ========================= */
+
+    .case-section {
+      background: #fff;
+    }
+
+    .case-section.alt {
+      background: #F5F9FA;
+    }
+
+    .case-heading {
+      text-align: center;
+      margin-bottom: 55px;
+    }
+
+    .case-heading .number {
+      display: block;
+
+      color: #3AA6A0;
+
+      font-size: 13px;
+
+      font-weight: 700;
+
+      letter-spacing: .12em;
+
+      margin-bottom: 8px;
+    }
+
+    .case-heading h2 {
+      color: #165E63;
+
+      font-size: 40px;
+
+      line-height: 1.2;
+
+      margin-bottom: 12px;
+    }
+
+    .case-heading p {
+      max-width: 680px;
+
+      margin: auto;
+
+      color: #666;
+    }
+
+
+    /* =========================
+       TWO COLUMNS
+    ========================= */
+
+    .case-two-col {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 30px;
+    }
+
+    .case-card {
+      background: #fff;
+
+      padding: 35px;
+
+      border-radius: 22px;
+
+      border: 1px solid #edf0f1;
+
+      box-shadow:
+        0 10px 30px rgba(0, 0, 0, .07);
+
+      transition: .3s ease;
+    }
+
+    .case-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .case-card .icon {
+      width: 48px;
+      height: 48px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: #E7F4F4;
+
+      color: #165E63;
+
+      border-radius: 50%;
+
+      font-size: 13px;
+      font-weight: 700;
+
+      margin-bottom: 20px;
+    }
+
+    .case-card h3 {
+      color: #165E63;
+
+      font-size: 24px;
+
+      margin-bottom: 14px;
+    }
+
+    .case-card p {
+      color: #666;
+
+      font-size: 15px;
+
+      line-height: 1.8;
+    }
+
+
+    /* =========================
+       IMPLEMENTATION
+    ========================= */
+
+    .implementation-grid {
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 35px;
+
+      align-items: start;
+    }
+
+    .implementation-list {
+      list-style: none;
+    }
+
+    .implementation-list li {
+      position: relative;
+
+      padding:
+        16px 0 16px 38px;
+
+      border-bottom:
+        1px solid #e2e7e8;
+
+      color: #555;
+    }
+
+    .implementation-list li::before {
+      content: "✓";
+
+      position: absolute;
+
+      left: 0;
+      top: 16px;
+
+      width: 24px;
+      height: 24px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: #E7F4F4;
+
+      color: #165E63;
+
+      border-radius: 50%;
+
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .tech-panel {
+      background: #fff;
+
+      padding: 32px;
+
+      border-radius: 22px;
+
+      box-shadow:
+        0 10px 30px rgba(0, 0, 0, .07);
+    }
+
+    .tech-panel h3 {
+      color: #165E63;
+
+      font-size: 22px;
+
+      margin-bottom: 20px;
+    }
+
+    .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tech-list span {
+      background: #E7F4F4;
+
+      color: #165E63;
+
+      padding: 9px 15px;
+
+      border-radius: 50px;
+
+      font-size: 13px;
+
+      font-weight: 600;
+    }
+
+
+    /* =========================
+       FLOW
+    ========================= */
+
+    .case-flow {
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 12px;
+
+      flex-wrap: wrap;
+    }
+
+    .flow-item {
+      min-width: 170px;
+
+      background: #fff;
+
+      padding: 22px 25px;
+
+      border-radius: 18px;
+
+      text-align: center;
+
+      border:
+        1px solid #e7eeee;
+
+      box-shadow:
+        0 10px 25px
+        rgba(0, 0, 0, .06);
+    }
+
+    .flow-item strong {
+      display: block;
+
+      color: #165E63;
+
+      font-size: 15px;
+    }
+
+    .flow-item small {
+      display: block;
+
+      color: #777;
+
+      font-size: 12px;
+
+      margin-top: 4px;
+    }
+
+    .flow-arrow {
+      color: #3AA6A0;
+
+      font-size: 24px;
+
+      font-weight: 700;
+    }
+
+
+    /* =========================
+       CODE
+    ========================= */
+
+    .code-intro {
+      max-width: 750px;
+
+      margin:
+        0 auto 25px;
+
+      text-align: center;
+
+      color: #666;
+    }
+
+    .code-wrapper {
+      max-width: 1000px;
+
+      margin: auto;
+
+      background: #161c1d;
+
+      border-radius: 22px;
+
+      overflow: hidden;
+
+      box-shadow:
+        0 20px 50px
+        rgba(0, 0, 0, .15);
+    }
+
+    .code-header {
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      padding: 15px 20px;
+
+      background: #0F4548;
+
+      color: #fff;
+    }
+
+    .code-header span {
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .copy-code {
+      border: 0;
+
+      background: #fff;
+
+      color: #165E63;
+
+      padding: 8px 15px;
+
+      border-radius: 20px;
+
+      font-size: 12px;
+
+      font-weight: 600;
+
+      cursor: pointer;
+    }
+
+    .code-wrapper pre {
+      margin: 0;
+
+      padding: 28px;
+
+      overflow-x: auto;
+
+      color: #e9eeee;
+
+      font-family:
+        "Courier New",
+        monospace;
+
+      font-size: 14px;
+
+      line-height: 1.8;
+    }
+
+    .code-note {
+      max-width: 900px;
+
+      margin:
+        20px auto 0;
+
+      color: #777;
+
+      font-size: 13px;
+
+      text-align: center;
+    }
+
+
+    /* =========================
+       OUTCOME
+    ========================= */
+
+    .outcome-card {
+      max-width: 1000px;
+
+      margin: auto;
+
+      padding: 55px;
+
+      border-radius: 25px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #165E63,
+          #3AA6A0
+        );
+
+      color: #fff;
+
+      box-shadow:
+        0 20px 50px
+        rgba(22, 94, 99, .25);
+    }
+
+    .outcome-card .number {
+      color: #D9FFFF;
+
+      font-size: 13px;
+
+      font-weight: 700;
+
+      letter-spacing: .12em;
+    }
+
+    .outcome-card h2 {
+      color: #fff;
+
+      font-size: 38px;
+
+      line-height: 1.25;
+
+      margin:
+        12px 0 20px;
+    }
+
+    .outcome-card p {
+      max-width: 760px;
+
+      color:
+        rgba(255, 255, 255, .9);
+
+      margin-bottom: 15px;
+    }
+
+
+    /* =========================
+       TAKEAWAYS
+    ========================= */
+
+    .takeaway-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 20px;
+    }
+
+    .takeaway-card {
+      background: #fff;
+
+      padding: 28px 22px;
+
+      border-radius: 18px;
+
+      border-bottom:
+        4px solid #3AA6A0;
+
+      box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, .06);
+
+      transition: .3s ease;
+    }
+
+    .takeaway-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .takeaway-card h3 {
+      color: #165E63;
+
+      font-size: 18px;
+
+      margin-bottom: 8px;
+    }
+
+    .takeaway-card p {
+      color: #666;
+
+      font-size: 13px;
+
+      line-height: 1.7;
+    }
+
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .case-cta {
+      text-align: center;
+
+      background: #fff;
+    }
+
+    .case-cta h2 {
+      color: #165E63;
+
+      font-size: 38px;
+
+      margin-bottom: 12px;
+    }
+
+    .case-cta p {
+      max-width: 650px;
+
+      margin:
+        0 auto 25px;
+
+      color: #666;
+    }
+
+    .primary-btn {
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding: 13px 24px;
+
+      background: #165E63;
+
+      color: #fff;
+
+      border-radius: 50px;
+
+      font-size: 14px;
+
+      font-weight: 600;
+
+      transition: .3s ease;
+    }
+
+    .primary-btn:hover {
+      background: #0F4548;
+
+      transform: translateY(-3px);
+    }
+
+
+    /* =========================
+       SCROLL PROGRESS
+    ========================= */
+
+    .scroll-progress {
+      position: fixed;
+
+      top: 0;
+      left: 0;
+
+      width: 0%;
+      height: 3px;
+
+      z-index: 2000;
+
+      background:
+        linear-gradient(
+          90deg,
+          #165E63,
+          #3AA6A0
+        );
+    }
+
+
+    /* =========================
+       BACK TO TOP
+    ========================= */
+
+    .back-to-top {
+      position: fixed;
+
+      right: 25px;
+      bottom: 25px;
+
+      width: 45px;
+      height: 45px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border: 0;
+
+      border-radius: 50%;
+
+      background: #165E63;
+      color: #fff;
+
+      font-size: 18px;
+
+      cursor: pointer;
+
+      opacity: 0;
+      visibility: hidden;
+
+      transform:
+        translateY(15px);
+
+      transition: .3s ease;
+
+      z-index: 900;
+    }
+
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+
+      transform:
+        translateY(0);
+    }
+
+
+    /* =========================
+       DARK MODE
+    ========================= */
+
+    body.dark-mode {
+      background: #121212;
+      color: #eee;
+    }
+
+    body.dark-mode .navbar {
+      background:
+        rgba(23, 23, 23, .95);
+
+      border-bottom-color:
+        rgba(89, 199, 194, .1);
+    }
+
+    body.dark-mode .nav-links a {
+      color: #ddd;
+    }
+
+    body.dark-mode .case-page {
+      background: #121212;
+    }
+
+    body.dark-mode .case-hero,
+    body.dark-mode .case-cta,
+    body.dark-mode .case-section {
+      background: #171717;
+    }
+
+    body.dark-mode .case-section.alt {
+      background: #1A1A1A;
+    }
+
+    body.dark-mode .case-hero h1 {
+      color: #fff;
+    }
+
+    body.dark-mode .case-intro,
+    body.dark-mode .case-heading p,
+    body.dark-mode .case-card p,
+    body.dark-mode .implementation-list li,
+    body.dark-mode .case-cta p {
+      color: #d0d0d0;
+    }
+
+    body.dark-mode .case-back {
+      color: #59C7C2;
+    }
+
+    body.dark-mode .case-heading h2,
+    body.dark-mode .case-card h3,
+    body.dark-mode .tech-panel h3,
+    body.dark-mode .takeaway-card h3,
+    body.dark-mode .case-cta h2 {
+      color: #59C7C2;
+    }
+
+    body.dark-mode .case-meta-card,
+    body.dark-mode .case-card,
+    body.dark-mode .tech-panel,
+    body.dark-mode .flow-item,
+    body.dark-mode .takeaway-card {
+      background: #222;
+
+      border-color: #333;
+    }
+
+    body.dark-mode .case-meta-card small,
+    body.dark-mode .flow-item small {
+      color: #aaa;
+    }
+
+    body.dark-mode .implementation-list li {
+      border-bottom-color: #333;
+    }
+
+    body.dark-mode .theme-toggle {
+      background: #333;
+      color: #59C7C2;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 900px) {
+
+      .case-meta {
+        grid-template-columns: 1fr;
+      }
+
+      .implementation-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .takeaway-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+    }
+
+
+    @media (max-width: 768px) {
+
+      .navbar {
+        padding:
+          15px 6%;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .case-page section {
+        padding:
+          70px 6%;
+      }
+
+      .case-hero {
+        padding:
+          90px 6% 65px !important;
+      }
+
+      .case-two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .case-hero h1 {
+        font-size: 42px;
+      }
+
+      .case-heading h2 {
+        font-size: 32px;
+      }
+
+      .case-intro {
+        font-size: 16px;
+      }
+
+      .outcome-card {
+        padding: 35px 25px;
+      }
+
+      .outcome-card h2 {
+        font-size: 30px;
+      }
+
+      .takeaway-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .case-flow {
+        flex-direction: column;
+      }
+
+      .flow-arrow {
+        transform:
+          rotate(90deg);
+      }
+
+      .flow-item {
+        width: 100%;
+      }
+
+      .code-wrapper pre {
+        font-size: 12px;
+      }
+
+      .back-to-top {
+        right: 18px;
+        bottom: 18px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+       NAVBAR
+  ========================= -->
+
+  <header>
+
+    <div class="navbar">
+
+      <a
+        href="index.html"
+        class="logo"
+      >
+        Donna<span>.</span>
+      </a>
+
+
+      <nav class="nav-links">
+
+        <a href="index.html#about">
+          About
+        </a>
+
+        <a href="index.html#skills">
+          Skills
+        </a>
+
+        <a href="index.html#projects">
+          Projects
+        </a>
+
+        <a href="index.html#contact">
+          Contact
+        </a>
+
+      </nav>
+
+
+      <button
+        class="theme-toggle"
+        id="themeToggle"
+        type="button"
+        aria-label="Toggle dark mode"
+      >
+        ☾
+      </button>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- =========================
+       MAIN
+  ========================= -->
+
+  <main class="case-page">
+
+
+    <!-- HERO -->
+
+    <section class="case-hero">
+
+      <div class="case-container">
+
+        <a
+          href="index.html#projects"
+          class="case-back"
+        >
+          ← Back to Projects
+        </a>
+
+
+        <span class="case-label">
+          Shopify Custom Code
+        </span>
+
+
+        <h1>
+          Dynamic Exit Intent
+          <span>Popup</span>
+        </h1>
+
+
+        <p class="case-intro">
+
+          Built a custom Shopify exit intent popup
+          that shows promotional messaging when a
+          visitor is about to leave the website.
+
+        </p>
+
+
+        <div class="case-tags">
+
+          <span>Shopify</span>
+
+          <span>Liquid</span>
+
+          <span>JavaScript</span>
+
+          <span>HTML</span>
+
+          <span>CSS</span>
+
+        </div>
+
+
+        <div class="case-meta">
+
+
+          <div class="case-meta-card">
+
+            <small>
+              Platform
+            </small>
+
+            <strong>
+              Shopify
+            </strong>
+
+          </div>
+
+
+          <div class="case-meta-card">
+
+            <small>
+              Technology
+            </small>
+
+            <strong>
+              Liquid / JavaScript / HTML / CSS
+            </strong>
+
+          </div>
+
+
+          <div class="case-meta-card">
+
+            <small>
+              Project Type
+            </small>
+
+            <strong>
+              Exit Intent Popup
+            </strong>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- CHALLENGE -->
+
+    <section class="case-section">
+
+      <div class="case-container">
+
+
+        <div class="case-heading">
+
+          <span class="number">
+            01 — THE CHALLENGE
+          </span>
+
+          <h2>
+            Showing a Message Before Visitors Leave
+          </h2>
+
+          <p>
+
+            Some visitors leave the website without
+            completing their purchase. I needed a simple
+            way to show a promotional message before
+            they left the page.
+
+          </p>
+
+        </div>
+
+
+        <div class="case-two-col">
+
+
+          <div class="case-card">
+
+            <div class="icon">
+              01
+            </div>
+
+            <h3>
+              The Challenge
+            </h3>
+
+            <p>
+
+              The website needed an exit intent message
+              that could appear when a visitor was about
+              to leave. The message also needed to be
+              flexible so the promotional content could
+              be changed when needed.
+
+            </p>
+
+          </div>
+
+
+          <div class="case-card">
+
+            <div class="icon">
+              02
+            </div>
+
+            <h3>
+              The Solution
+            </h3>
+
+            <p>
+
+              I built a custom popup using HTML, CSS,
+              JavaScript, and Shopify Liquid. JavaScript
+              detects the visitor's exit movement and
+              opens the popup with the promotional
+              message.
+
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- IMPLEMENTATION -->
+
+    <section class="case-section alt">
+
+      <div class="case-container">
+
+
+        <div class="case-heading">
+
+          <span class="number">
+            02 — TECHNICAL IMPLEMENTATION
+          </span>
+
+          <h2>
+            How It Was Built
+          </h2>
+
+          <p>
+
+            The popup was created directly in the Shopify
+            theme so the content and behavior could be
+            controlled with custom code.
+
+          </p>
+
+        </div>
+
+
+        <div class="implementation-grid">
+
+
+          <div>
+
+            <ul class="implementation-list">
+
+              <li>
+                Created the popup structure using HTML.
+              </li>
+
+              <li>
+                Added custom CSS for the popup design
+                and responsive layout.
+              </li>
+
+              <li>
+                Used JavaScript to detect exit intent.
+              </li>
+
+              <li>
+                Added dynamic promotional content
+                using Shopify Liquid.
+              </li>
+
+              <li>
+                Added close and interaction controls
+                for the popup.
+              </li>
+
+            </ul>
+
+          </div>
+
+
+          <div class="tech-panel">
+
+            <h3>
+              Tools & Technologies
+            </h3>
+
+            <div class="tech-list">
+
+              <span>
+                Shopify
+              </span>
+
+              <span>
+                Liquid
+              </span>
+
+              <span>
+                JavaScript
+              </span>
+
+              <span>
+                HTML
+              </span>
+
+              <span>
+                CSS
+              </span>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- FLOW -->
+
+    <section class="case-section">
+
+      <div class="case-container">
+
+
+        <div class="case-heading">
+
+          <span class="number">
+            03 — HOW IT WORKS
+          </span>
+
+          <h2>
+            Popup Flow
+          </h2>
+
+          <p>
+
+            The popup only appears when the exit
+            condition is detected.
+
+          </p>
+
+        </div>
+
+
+        <div class="case-flow">
+
+
+          <div class="flow-item">
+
+            <strong>
+              Visitor Browses
+            </strong>
+
+            <small>
+              Normal page activity
+            </small>
+
+          </div>
+
+
+          <div class="flow-arrow">
+            →
+          </div>
+
+
+          <div class="flow-item">
+
+            <strong>
+              Exit Intent
+            </strong>
+
+            <small>
+              Cursor moves to leave
+            </small>
+
+          </div>
+
+
+          <div class="flow-arrow">
+            →
+          </div>
+
+
+          <div class="flow-item">
+
+            <strong>
+              JavaScript
+            </strong>
+
+            <small>
+              Detects the action
+            </small>
+
+          </div>
+
+
+          <div class="flow-arrow">
+            →
+          </div>
+
+
+          <div class="flow-item">
+
+            <strong>
+              Popup Opens
+            </strong>
+
+            <small>
+              Promotional message
+            </small>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- CODE -->
+
+    <section class="case-section alt">
+
+      <div class="case-container">
+
+
+        <div class="case-heading">
+
+          <span class="number">
+            04 — CODE
+          </span>
+
+          <h2>
+            Exit Intent JavaScript
+          </h2>
+
+          <p class="code-intro">
+
+            The JavaScript listens for the visitor's
+            mouse movement and opens the popup when
+            the cursor moves toward the top of the page.
+
+          </p>
+
+        </div>
+
+
+        <div class="code-wrapper">
+
+
+          <div class="code-header">
+
+            <span>
+              JavaScript
+            </span>
+
+            <button
+              class="copy-code"
+              id="copyCode"
+              type="button"
+            >
+              Copy Code
+            </button>
+
+          </div>
+
+
+          <pre id="codeBlock"><code>const popup = document.getElementById("exitPopup");
+const closePopup = document.getElementById("closePopup");
+
+let popupShown = false;
+
+document.addEventListener("mouseleave", function(event) {
+
+  if (event.clientY <= 0 && !popupShown) {
+
+    popupShown = true;
+
+    popup.classList.add("show");
+
+  }
+
+});
+
+
+closePopup.addEventListener("click", function() {
+
+  popup.classList.remove("show");
+
+});</code></pre>
+
+
+        </div>
+
+
+        <p class="code-note">
+
+          This is a simplified version of the exit
+          intent logic used in the project. The popup
+          content and styling can be changed depending
+          on the campaign.
+
+        </p>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- OUTCOME -->
+
+    <section class="case-section">
+
+      <div class="case-container">
+
+
+        <div class="outcome-card">
+
+
+          <span class="number">
+            05 — OUTCOME
+          </span>
+
+
+          <h2>
+            More Control Over Exit Messaging
+          </h2>
+
+
+          <p>
+
+            The custom popup gave the website a simple
+            way to show a promotional message when a
+            visitor was about to leave.
+
+          </p>
+
+
+          <p>
+
+            Because the popup was built with Shopify
+            Liquid and custom JavaScript, the content
+            and behavior could be changed without
+            rebuilding the whole section.
+
+          </p>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- TAKEAWAYS -->
+
+    <section class="case-section alt">
+
+      <div class="case-container">
+
+
+        <div class="case-heading">
+
+          <span class="number">
+            06 — KEY TAKEAWAYS
+          </span>
+
+
+          <h2>
+            What This Project Demonstrates
+          </h2>
+
+        </div>
+
+
+        <div class="takeaway-grid">
+
+
+          <div class="takeaway-card">
+
+            <h3>
+              Shopify
+            </h3>
+
+            <p>
+
+              Working directly with a Shopify theme
+              to add custom functionality.
+
+            </p>
+
+          </div>
+
+
+          <div class="takeaway-card">
+
+            <h3>
+              JavaScript
+            </h3>
+
+            <p>
+
+              Using JavaScript to detect user actions
+              and control popup behavior.
+
+            </p>
+
+          </div>
+
+
+          <div class="takeaway-card">
+
+            <h3>
+              Liquid
+            </h3>
+
+            <p>
+
+              Using Shopify Liquid to display
+              dynamic campaign content.
+
+            </p>
+
+          </div>
+
+
+          <div class="takeaway-card">
+
+            <h3>
+              UX
+            </h3>
+
+            <p>
+
+              Creating a simple message to engage
+              visitors before they leave the website.
+
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- CTA -->
+
+    <section class="case-cta">
+
+      <div class="case-container">
+
+
+        <h2>
+          More Shopify Projects
+        </h2>
+
+
+        <p>
+
+          Explore more of my Shopify development,
+          CRO, Klaviyo, and custom-code projects.
+
+        </p>
+
+
+        <a
+          href="index.html#projects"
+          class="primary-btn"
+        >
+          ← Back to Projects
+        </a>
+
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- SCROLL PROGRESS -->
+
+  <div
+    class="scroll-progress"
+    id="scrollProgress"
+  ></div>
+
+
+
+  <!-- BACK TO TOP -->
+
+  <button
+    class="back-to-top"
+    id="backToTop"
+    type="button"
+    aria-label="Back to top"
+  >
+    ↑
+  </button>
+
+
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+
+    /* =========================
+       DARK MODE
+    ========================= */
+
+    const themeToggle =
+      document.getElementById("themeToggle");
+
+    const savedTheme =
+      localStorage.getItem("theme");
+
+
+    if (savedTheme === "dark") {
+
+      document.body.classList.add("dark-mode");
+
+      themeToggle.textContent = "☀";
+
+    }
+
+
+    themeToggle.addEventListener(
+      "click",
+      function() {
+
+        document.body.classList.toggle(
+          "dark-mode"
+        );
+
+        const isDark =
+          document.body.classList.contains(
+            "dark-mode"
+          );
+
+        localStorage.setItem(
+          "theme",
+          isDark ? "dark" : "light"
+        );
+
+        themeToggle.textContent =
+          isDark ? "☀" : "☾";
+
+      }
+    );
+
+
+
+    /* =========================
+       COPY CODE
+    ========================= */
+
+    const copyButton =
+      document.getElementById("copyCode");
+
+    const codeBlock =
+      document.getElementById("codeBlock");
+
+
+    copyButton.addEventListener(
+      "click",
+      async function() {
+
+        try {
+
+          await navigator.clipboard.writeText(
+            codeBlock.innerText
+          );
+
+          copyButton.textContent =
+            "Copied!";
+
+          setTimeout(
+            function() {
+
+              copyButton.textContent =
+                "Copy Code";
+
+            },
+            1500
+          );
+
+        } catch (error) {
+
+          copyButton.textContent =
+            "Copy Failed";
+
+        }
+
+      }
+    );
+
+
+
+    /* =========================
+       SCROLL PROGRESS
+    ========================= */
+
+    const scrollProgress =
+      document.getElementById(
+        "scrollProgress"
+      );
+
+
+    function updateScrollProgress() {
+
+      const scrollTop =
+        window.scrollY;
+
+      const documentHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+
+      const progress =
+        documentHeight > 0
+          ? (scrollTop / documentHeight) * 100
+          : 0;
+
+      scrollProgress.style.width =
+        progress + "%";
+
+    }
+
+
+    window.addEventListener(
+      "scroll",
+      updateScrollProgress
+    );
+
+    updateScrollProgress();
+
+
+
+    /* =========================
+       BACK TO TOP
+    ========================= */
+
+    const backToTop =
+      document.getElementById(
+        "backToTop"
+      );
+
+
+    window.addEventListener(
+      "scroll",
+      function() {
+
+        if (window.scrollY > 500) {
+
+          backToTop.classList.add("show");
+
+        } else {
+
+          backToTop.classList.remove("show");
+
+        }
+
+      }
+    );
+
+
+    backToTop.addEventListener(
+      "click",
+      function() {
+
+        window.scrollTo({
+
+          top: 0,
+
+          behavior: "smooth"
+
+        });
+
+      }
+    );
+
+
+
+    /* =========================
+       NAVBAR SHADOW
+    ========================= */
+
+    const navbar =
+      document.querySelector(
+        ".navbar"
+      );
+
+
+    window.addEventListener(
+      "scroll",
+      function() {
+
+        if (window.scrollY > 30) {
+
+          navbar.style.boxShadow =
+            "0 8px 30px rgba(0,0,0,.06)";
+
+        } else {
+
+          navbar.style.boxShadow =
+            "none";
+
+        }
+
+      }
+    );
+
+  </script>
+
+
+</body>
+
+</html>
