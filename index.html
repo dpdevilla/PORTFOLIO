@@ -440,25 +440,49 @@ Performance Optimization
         </p>
     </div>
 
-    <form id="contactForm" class="contact-form">
+    <form
+        id="contactForm"
+        class="contact-form"
+        action="https://formsubmit.co/dpdevilla@gmail.com"
+        method="POST"
+    >
 
         <input
             type="text"
+            name="name"
             id="name"
             placeholder="Your Name"
+            required
         >
 
         <input
             type="email"
+            name="email"
             id="email"
             placeholder="Your Email"
+            required
         >
 
         <textarea
+            name="message"
             id="message"
             rows="6"
             placeholder="Your Message"
+            required
         ></textarea>
+
+        <!-- Optional settings -->
+        <input
+            type="hidden"
+            name="_subject"
+            value="New Portfolio Contact Message"
+        >
+
+        <input
+            type="hidden"
+            name="_captcha"
+            value="false"
+        >
 
         <button type="submit">
             Send Message
@@ -467,6 +491,8 @@ Performance Optimization
         <p id="successMessage" class="success-message"></p>
 
     </form>
+
+</section>
 
     <!-- Social Icons -->
 
