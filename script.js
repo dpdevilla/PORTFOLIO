@@ -288,70 +288,78 @@ typeEffect();
 
 }
 
+
 /* ======================================
-CONTACT FORM VALIDATION
+   CONTACT FORM VALIDATION
 ====================================== */
 
 const contactForm = document.getElementById("contactForm");
 
-if(contactForm){
+if (contactForm) {
 
-contactForm.addEventListener("submit",(e)=>{
+    contactForm.addEventListener("submit", (e) => {
 
-e.preventDefault();
+        const name =
+            document.getElementById("name").value.trim();
 
-const name =
-document.getElementById("name").value.trim();
+        const email =
+            document.getElementById("email").value.trim();
 
-const email =
-document.getElementById("email").value.trim();
+        const message =
+            document.getElementById("message").value.trim();
 
-const message =
-document.getElementById("message").value.trim();
+        /* ==============================
+           VALIDATION
+        ============================== */
 
-if(name === ""){
+        if (name === "") {
 
-alert("Please enter your name.");
+            e.preventDefault();
 
-return;
+            alert("Please enter your name.");
+
+            return;
+        }
+
+        if (email === "") {
+
+            e.preventDefault();
+
+            alert("Please enter your email.");
+
+            return;
+        }
+
+        const emailPattern =
+            /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailPattern.test(email)) {
+
+            e.preventDefault();
+
+            alert("Please enter a valid email address.");
+
+            return;
+        }
+
+        if (message === "") {
+
+            e.preventDefault();
+
+            alert("Please enter your message.");
+
+            return;
+        }
+
+        /*
+         * IMPORTANT:
+         * Do NOT use e.preventDefault() here.
+         *
+         * Once validation passes, the form will
+         * naturally submit to FormSubmit.
+         */
+
+    });
 
 }
 
-if(email === ""){
-
-alert("Please enter your email.");
-
-return;
-
-}
-
-const emailPattern =
-/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-if(!emailPattern.test(email)){
-
-alert("Please enter a valid email address.");
-
-return;
-
-}
-
-if(message === ""){
-
-alert("Please enter your message.");
-
-return;
-
-}
-
-const success =
-document.getElementById("successMessage");
-
-success.textContent =
-"✅ Thank you! Your message has been sent successfully.";
-
-contactForm.reset();
-
-});
-
-}
