@@ -290,14 +290,17 @@ typeEffect();
 
 
 /* ======================================
-   CONTACT FORM VALIDATION
+   CONTACT FORM
 ====================================== */
 
-const contactForm = document.getElementById("contactForm");
+const contactForm =
+    document.getElementById("contactForm");
 
 if (contactForm) {
 
-    contactForm.addEventListener("submit", (e) => {
+    contactForm.addEventListener("submit", function(e) {
+
+        e.preventDefault();
 
         const name =
             document.getElementById("name").value.trim();
@@ -308,58 +311,113 @@ if (contactForm) {
         const message =
             document.getElementById("message").value.trim();
 
+        const success =
+            document.getElementById("successMessage");
+
+
         /* ==============================
            VALIDATION
         ============================== */
 
         if (name === "") {
 
-            e.preventDefault();
-
             alert("Please enter your name.");
 
             return;
+
         }
 
-        if (email === "") {
 
-            e.preventDefault();
+        if (email === "") {
 
             alert("Please enter your email.");
 
             return;
+
         }
+
 
         const emailPattern =
             /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-        if (!emailPattern.test(email)) {
 
-            e.preventDefault();
+        if (!emailPattern.test(email)) {
 
             alert("Please enter a valid email address.");
 
             return;
+
         }
 
-        if (message === "") {
 
-            e.preventDefault();
+        if (message === "") {
 
             alert("Please enter your message.");
 
             return;
+
         }
 
-        /*
-         * IMPORTANT:
-         * Do NOT use e.preventDefault() here.
-         *
-         * Once validation passes, the form will
-         * naturally submit to FormSubmit.
-         */
+
+        /* ==============================
+           DISABLE BUTTON
+        ============================== */
+
+        const submitButton =
+            contactForm.querySelector("button[type='submit']");
+
+        submitButton.disabled = true;
+
+        submitButton.textContent = "Sending...";
+
+
+        /* ==============================
+           SEND EMAIL
+        ============================== */
+
+        emailjs.sendForm(
+            "service_dw468jn",
+            "template_pj9ut0j",
+            contactForm
+        )
+
+        .then(function() {
+
+            success.textContent =
+                "✅ Thank you! Your message has been sent successfully.";
+
+            success.style.display = "block";
+
+            contactForm.reset();
+
+            submitButton.disabled = false;
+
+            submitButton.textContent =
+                "Send Message";
+
+        })
+
+        .catch(function(error) {
+
+            console.error(
+                "EmailJS Error:",
+                error
+            );
+
+            success.textContent =
+                "❌ Something went wrong. Please try again.";
+
+            success.style.display = "block";
+
+            submitButton.disabled = false;
+
+            submitButton.textContent =
+                "Send Message";
+
+        });
 
     });
 
 }
+
 

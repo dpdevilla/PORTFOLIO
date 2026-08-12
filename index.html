@@ -434,19 +434,19 @@ Performance Optimization
 <section class="contact" id="contact">
 
     <div class="section-title">
+
         <h2>Let's Work Together</h2>
 
         <p>
             Have a Shopify project or job opportunity?
             Feel free to send me a message.
         </p>
+
     </div>
 
     <form
         id="contactForm"
         class="contact-form"
-        action="https://formsubmit.co/dpdevilla@gmail.com"
-        method="POST"
     >
 
         <input
@@ -473,27 +473,20 @@ Performance Optimization
             required
         ></textarea>
 
-        <input
-            type="hidden"
-            name="_subject"
-            value="New Portfolio Contact Message"
-        >
-
-        <input
-            type="hidden"
-            name="_captcha"
-            value="false"
-        >
-
         <button type="submit">
             Send Message
         </button>
 
-        <p id="successMessage" class="success-message"></p>
+        <p
+            id="successMessage"
+            class="success-message"
+        ></p>
 
     </form>
 
 </section>
+
+
 
 <!-- ================= FOOTER ================= -->
 
@@ -514,6 +507,22 @@ Performance Optimization
 </footer>
 
 <script src="script.js"></script>
+
+```html
+<!-- EmailJS -->
+<script
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+
+<script>
+    emailjs.init({
+        publicKey: "9_mKB6T4d9LN9Z0au"
+    });
+</script>
+
+<script src="script.js"></script>
+```
+
 
 </body>
 
