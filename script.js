@@ -218,10 +218,8 @@ if(typingElement){
 
 const words = [
 
-"Shopify E-commerce Specialist",
-"Shopify Developer",
-"CRO Specialist",
-"E-commerce Optimization Specialist"
+"Shopify E-commerce Specialist | CRO",
+"Shopify Developer | UX & CRO"
 
 ];
 
