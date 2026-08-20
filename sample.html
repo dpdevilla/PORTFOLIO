@@ -1,0 +1,2698 @@
+<style>
+    /* =========================================================
+       SPA E-VOUCHER
+    ========================================================= */
+    
+    .spa-evoucher,
+    .spa-evoucher * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    
+    .spa-evoucher {
+      background: #f9f7f4;
+      padding: 50px 20px;
+    }
+    
+    .spa-wrapper {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    
+    /* =========================================================
+       VOUCHER SLIDER
+    ========================================================= */
+    
+    .spa-voucher-slider {
+      width: 100%;
+      margin-bottom: 60px;
+    }
+    
+    
+    /* =========================================================
+       PROMO TEXT
+    ========================================================= */
+    
+    .spa-voucher-slider-title {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+    
+    .spa-voucher-slider-title strong {
+      display: block;
+      margin: 0 0 8px;
+      font-size: 34px;
+      line-height: 1.2;
+      font-weight: 700;
+      color: #b88b4a;
+    }
+    
+    .spa-voucher-slider-title p {
+      margin: 0;
+      color: #777;
+      font-size: 16px;
+    }
+    
+    .spa-promo-deadline {
+      margin: 0 0 8px !important;
+      color: #b88b4a !important;
+      font-size: 20px !important;
+      font-weight: 700 !important;
+    }
+    
+    
+    /* =========================================================
+       SLIDER
+    ========================================================= */
+    
+    .spa-slider-window {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 18px;
+      background: #f5f3ef;
+    }
+    
+    .spa-slider-track {
+      display: flex;
+      width: 100%;
+      transition: transform 0.6s ease;
+    }
+    
+    .spa-slide {
+      min-width: 100%;
+      width: 100%;
+      display: block;
+      background: #f5f3ef;
+      line-height: 0;
+    }
+    
+    .spa-slide img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+    
+    
+    /* =========================================================
+       SLIDER ARROWS
+    ========================================================= */
+    
+    .spa-slider-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      border: none;
+      border-radius: 50%;
+      background: rgba(255,255,255,.95);
+      color: #333;
+      font-size: 30px;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 5;
+      box-shadow: 0 5px 15px rgba(0,0,0,.15);
+      transition: all .25s ease;
+    }
+    
+    .spa-slider-arrow:hover {
+      background: #fff;
+      transform: translateY(-50%) scale(1.05);
+    }
+    
+    .spa-slider-prev {
+      left: 18px;
+    }
+    
+    .spa-slider-next {
+      right: 18px;
+    }
+    
+    
+    /* =========================================================
+       SLIDER DOTS
+    ========================================================= */
+    
+    .spa-slider-dots {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+    }
+    
+    .spa-slider-dot {
+      width: 9px;
+      height: 9px;
+      padding: 0;
+      border: none;
+      border-radius: 50%;
+      background: #d2cec8;
+      cursor: pointer;
+      transition: all .25s ease;
+    }
+    
+    .spa-slider-dot.active {
+      width: 25px;
+      border-radius: 10px;
+      background: #b88b4a;
+    }
+    
+    
+    /* =========================================================
+       SERVICES HEADER
+    ========================================================= */
+    
+    .spa-services-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 30px;
+      margin-bottom: 35px;
+    }
+    
+    .spa-services-heading h3 {
+      margin: 0 0 8px;
+      font-size: 34px;
+      line-height: 1.2;
+      color: #222;
+    }
+    
+    .spa-subtitle {
+      margin: 0;
+      color: #777;
+    }
+    
+    
+    /* =========================================================
+       COUNTER
+    ========================================================= */
+    
+    .spa-counter {
+      font-size: 17px;
+      font-weight: 600;
+      color: #333;
+      white-space: nowrap;
+    }
+    
+    .spa-counter strong {
+      color: #b88b4a;
+    }
+    
+    
+    /* =========================================================
+       SERVICE GRID
+    ========================================================= */
+    
+    .spa-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      align-items: stretch;
+    }
+    
+    
+    /* =========================================================
+       SERVICE CARD
+    ========================================================= */
+    
+    .spa-card {
+      background: #fff;
+      padding: 0 0 25px;
+      border-radius: 18px;
+      border: 3px solid transparent;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all .25s ease;
+    }
+    
+    .spa-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,.08);
+    }
+    
+    .spa-card.selected {
+      border-color: #b88b4a;
+      background: #fff8ef;
+    }
+    
+    
+    /* =========================================================
+       SERVICE IMAGE
+    ========================================================= */
+    
+    .spa-service-image {
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+      background: #f3f1ed;
+      flex-shrink: 0;
+    }
+    
+    .spa-service-image img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+      transition: transform .35s ease;
+    }
+    
+    .spa-card:hover .spa-service-image img {
+      transform: scale(1.04);
+    }
+    
+    
+    /* =========================================================
+       SERVICE CONTENT
+    ========================================================= */
+    
+    .spa-service-content {
+      padding: 22px 25px 0;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    
+    
+    /* =========================================================
+       SERVICE ICON
+    ========================================================= */
+    
+    .spa-service-icon {
+      width: 56px;
+      height: 56px;
+      margin: -48px auto 15px;
+      position: relative;
+      z-index: 2;
+      background: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 25px;
+      box-shadow: 0 5px 15px rgba(0,0,0,.12);
+      flex-shrink: 0;
+    }
+    
+    
+    /* =========================================================
+       SERVICE TITLE
+    ========================================================= */
+    
+    .spa-card h4 {
+      min-height: 58px;
+      margin: 0 0 10px;
+      font-size: 20px;
+      line-height: 1.4;
+      color: #333;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+    }
+    
+    
+    /* =========================================================
+       SERVICE DESCRIPTION
+    ========================================================= */
+    
+    .spa-card > .spa-service-content > p {
+      min-height: 70px;
+      margin: 0;
+      color: #777;
+      font-size: 14px;
+      line-height: 1.6;
+      text-align: left;
+    }
+    
+    
+    /* =========================================================
+       SERVICE DETAILS
+    ========================================================= */
+    
+    .spa-service-details {
+      width: 100%;
+      margin-top: 8px;
+      color: #777;
+      font-size: 14px;
+      line-height: 1.6;
+      text-align: left;
+    }
+    
+    .spa-service-details div {
+      margin-bottom: 4px;
+    }
+    
+    .spa-service-details strong {
+      color: #444;
+      font-weight: 600;
+    }
+    
+    .spa-duration {
+      text-align: left;
+      margin-top: 6px;
+    }
+    
+    
+    /* =========================================================
+       PRICE AREA
+    ========================================================= */
+    
+    .spa-price {
+      min-height: 92px;
+      margin-top: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      line-height: 1.3;
+    }
+    
+    
+    /* ORIGINAL PRICE */
+    
+    .spa-original-price {
+      font-size: 23px;
+      color: #999;
+      text-decoration: line-through;
+      text-decoration-thickness: 1px;
+      margin-bottom: 3px;
+    }
+    
+    
+    /* DISCOUNTED PRICE */
+    
+    .spa-discounted-price {
+      font-size: 20px;
+      font-weight: 700;
+      color: #b88b4a;
+    }
+    
+    
+    /* 50% OFF LABEL */
+    
+    .spa-discount-label {
+      display: inline-block;
+      margin-left: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #fff;
+      background: #b88b4a;
+      border-radius: 4px;
+      padding: 3px 6px;
+      vertical-align: middle;
+    }
+    
+    
+    /* SAVINGS */
+    
+    .spa-savings {
+      margin-top: 3px;
+      font-size: 12px;
+      color: #777;
+    }
+    
+    
+    /* PRICE ERROR */
+    
+    .spa-price-error {
+      font-size: 13px;
+      color: #999;
+    }
+    
+    
+    /* =========================================================
+       QUANTITY
+    ========================================================= */
+    
+    .spa-qty {
+      height: 38px;
+      min-height: 38px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      margin-top: 20px;
+      flex-shrink: 0;
+    }
+    
+    .spa-qty button {
+      width: 38px;
+      height: 38px;
+      min-width: 38px;
+      padding: 0;
+      border: none;
+      border-radius: 50%;
+      background: #b88b4a;
+      color: #fff;
+      font-size: 22px;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .2s ease;
+    }
+    
+    .spa-qty button:hover {
+      background: #a77b3d;
+    }
+    
+    .qty-value {
+      min-width: 30px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: 600;
+    }
+    
+    
+    /* =========================================================
+       BOTTOM SECTION
+    ========================================================= */
+    
+    .spa-bottom-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+      margin-top: 25px;
+    }
+    
+    
+    /* =========================================================
+       PAYMENT NOTICE
+    ========================================================= */
+    
+    .spa-payment-notice {
+      width: 100%;
+      margin-bottom: 22px;
+      padding: 18px 20px;
+      background: #fff8ef;
+      border: 1px solid #e2c18f;
+      border-left: 5px solid #b88b4a;
+      border-radius: 10px;
+      color: #555;
+      font-size: 14px;
+      line-height: 1.65;
+      text-align: left;
+    }
+    
+    .spa-payment-notice strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #8d6736;
+      font-size: 16px;
+    }
+    
+    
+    /* =========================================================
+       TERMS
+    ========================================================= */
+    
+    .spa-terms {
+      margin: 0;
+      padding: 0;
+      color: #666;
+      font-size: 14px;
+      line-height: 2;
+      text-align: left;
+    }
+    
+    
+    /* =========================================================
+       ORDER SUMMARY
+    ========================================================= */
+    
+    .spa-order-summary {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      text-align: right;
+    }
+    
+    
+    /* =========================================================
+       TOTAL AREA
+    ========================================================= */
+    
+    .spa-original-total {
+      font-size: 17px;
+      color: #999;
+      text-decoration: line-through;
+      text-decoration-thickness: 1px;
+      margin-bottom: 4px;
+    }
+    
+    .spa-discounted-total {
+      font-size: 28px;
+      font-weight: 700;
+      color: #b88b4a;
+    }
+    
+    .spa-total-savings {
+      margin-top: 5px;
+      font-size: 15px;
+      color: #777;
+    }
+    
+    
+    /* =========================================================
+       ERROR
+    ========================================================= */
+    
+    .spa-error {
+      display: none;
+      margin-top: 8px;
+      color: #d62424;
+      font-size: 15px;
+      line-height: 1.4;
+      text-align: right;
+    }
+    
+    
+    /* =========================================================
+       CHECKOUT BUTTON
+    ========================================================= */
+    
+    .spa-cta {
+      margin-top: 18px;
+      text-align: right;
+    }
+    
+    .spa-btn {
+      display: inline-block;
+      width: 240px;
+      padding: 18px;
+      border: none;
+      border-radius: 12px;
+      background: #b88b4a;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .3s ease;
+    }
+    
+    .spa-btn:hover {
+      background: #a77b3d;
+    }
+    
+    .spa-btn:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    
+    /* =========================================================
+       TABLET
+    ========================================================= */
+    
+    @media (max-width: 991px) {
+    
+      .spa-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    
+    }
+    
+    
+    /* =========================================================
+       MOBILE
+    ========================================================= */
+    
+    @media (max-width: 768px) {
+    
+      .spa-evoucher {
+        padding: 30px 15px;
+      }
+    
+      .spa-voucher-slider {
+        margin-bottom: 45px;
+      }
+    
+      .spa-voucher-slider-title strong {
+        font-size: 28px;
+      }
+    
+      .spa-voucher-slider-title p {
+        font-size: 14px;
+      }
+    
+      .spa-slider-arrow {
+        width: 38px;
+        height: 38px;
+        font-size: 23px;
+      }
+    
+      .spa-slider-prev {
+        left: 10px;
+      }
+    
+      .spa-slider-next {
+        right: 10px;
+      }
+    
+      .spa-services-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+    
+      .spa-services-heading h3 {
+        font-size: 30px;
+      }
+    
+      .spa-counter {
+        white-space: normal;
+      }
+    
+      .spa-grid {
+        grid-template-columns: 1fr;
+      }
+    
+      .spa-service-image {
+        height: 250px;
+      }
+    
+      .spa-bottom-section {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        margin-top: 25px;
+      }
+    
+      .spa-payment-notice {
+        margin-bottom: 20px;
+        padding: 16px;
+      }
+    
+      .spa-terms {
+        order: 1;
+        text-align: left;
+      }
+    
+      .spa-order-summary {
+        order: 2;
+        width: 100%;
+        align-items: flex-end;
+        text-align: right;
+      }
+    
+      .spa-discounted-total {
+        font-size: 24px;
+      }
+    
+      .spa-error {
+        text-align: right;
+      }
+    
+      .spa-cta {
+        width: 100%;
+        text-align: right;
+      }
+    
+      .spa-btn {
+        width: 220px;
+      }
+    
+    }
+    
+    
+    /* =========================================================
+       SMALL MOBILE
+    ========================================================= */
+    
+    @media (max-width: 480px) {
+    
+      .spa-voucher-slider-title strong {
+        font-size: 25px;
+      }
+    
+      .spa-voucher-slider-title p {
+        font-size: 13px;
+      }
+    
+      .spa-service-image {
+        height: 230px;
+      }
+    
+      .spa-btn {
+        width: 100%;
+      }
+    
+    }
+    </style>
+    
+    
+    <div class="spa-evoucher">
+    
+      <div class="spa-wrapper">
+    
+        <!-- =====================================================
+             PROMO + SLIDER
+        ====================================================== -->
+    
+        <div class="spa-voucher-slider">
+    
+          <div class="spa-voucher-slider-title">
+    
+            <strong>
+              Enjoy 50% DISCOUNT on all Spa services
+            </strong>
+    
+            <p class="spa-promo-deadline">
+              Until Aug 31!
+            </p>
+    
+            <p>
+              Select at least 3 services to qualify.
+            </p>
+    
+          </div>
+    
+    
+          <div
+            class="spa-slider-window"
+            id="spaVoucherSlider"
+          >
+    
+            <div
+              class="spa-slider-track"
+              id="spaSliderTrack"
+            >
+    
+              <div class="spa-slide">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0633/7786/6990/files/SmoothingSoleTherapy_dcd009c6-0811-4fbe-afa7-732170e9e1b0.jpg?v=1786540437"
+                  alt="Smoothing Sole Therapy E-Voucher"
+                >
+              </div>
+    
+              <div class="spa-slide">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0633/7786/6990/files/Tension-ReliefFocus_81c21daf-1aba-4e7b-a57d-e4778baeb85d.jpg?v=1786540407"
+                  alt="Tension-Relief Focus E-Voucher"
+                >
+              </div>
+    
+              <div class="spa-slide">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0633/7786/6990/files/30-minutePowerFacialRitual_43148941-9bc8-4421-8a0d-71d81ed784f3.jpg?v=1786540386"
+                  alt="30-minute Power Facial Ritual E-Voucher"
+                >
+              </div>
+    
+              <div class="spa-slide">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0633/7786/6990/files/ScalpDetox_SignatureAirwrapBlowout.jpg?v=1786540285"
+                  alt="Scalp Detox Signature Airwrap Blowout E-Voucher"
+                >
+              </div>
+    
+            </div>
+    
+    
+            <button
+              type="button"
+              class="spa-slider-arrow spa-slider-prev"
+              id="spaSliderPrev"
+              aria-label="Previous voucher"
+            >
+              ‹
+            </button>
+    
+            <button
+              type="button"
+              class="spa-slider-arrow spa-slider-next"
+              id="spaSliderNext"
+              aria-label="Next voucher"
+            >
+              ›
+            </button>
+    
+          </div>
+    
+    
+          <div
+            class="spa-slider-dots"
+            id="spaSliderDots"
+          >
+    
+            <button
+              type="button"
+              class="spa-slider-dot active"
+              data-slide="0"
+              aria-label="Voucher 1"
+            ></button>
+    
+            <button
+              type="button"
+              class="spa-slider-dot"
+              data-slide="1"
+              aria-label="Voucher 2"
+            ></button>
+    
+            <button
+              type="button"
+              class="spa-slider-dot"
+              data-slide="2"
+              aria-label="Voucher 3"
+            ></button>
+    
+            <button
+              type="button"
+              class="spa-slider-dot"
+              data-slide="3"
+              aria-label="Voucher 4"
+            ></button>
+    
+          </div>
+    
+        </div>
+    
+    
+        <!-- =====================================================
+             SERVICES
+        ====================================================== -->
+    
+        <div class="spa-services">
+    
+          <div class="spa-services-header">
+    
+            <div class="spa-services-heading">
+    
+              <h3>
+                Select Your Services
+              </h3>
+    
+              <p class="spa-subtitle">
+                Select your services and quantity.
+              </p>
+    
+            </div>
+    
+            <div class="spa-counter">
+    
+              Selected
+    
+              <strong>
+                <span id="spaCount">0</span>
+              </strong>
+    
+              of 3 required
+    
+            </div>
+    
+          </div>
+    
+    
+          <!-- ===================================================
+               SERVICE GRID
+          ==================================================== -->
+    
+          <div class="spa-grid">
+    
+    
+            <!-- =================================================
+                 TENSION RELIEF
+            ================================================== -->
+    
+            <div
+              class="spa-card"
+              data-service="Body"
+              data-variant-id="49398249586926"
+            >
+    
+              <div class="spa-service-image">
+    
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0633/7786/6990/files/Tension-Relief_Focus.png?v=1786583832"
+                  alt="Tension-Relief Focus"
+                  loading="lazy"
+                >
+    
+              </div>
+    
+    
+              <div class="spa-service-content">
+    
+                <div class="spa-service-icon">
+                  🧘
+                </div>
+    
+                <h4>
+                  Tension-Relief Focus
+                </h4>
+    
+                <p>
+                  A deeply relaxing treatment that melts tension from the areas that hold the most stress — the head, neck, and shoulders.
+                </p>
+    
+                <div class="spa-service-details">
+    
+                  <div>
+                    <strong>Best For:</strong>
+                    Stress, postural fatigue, or interrupted sleep
+                  </div>
+    
+                  <div class="spa-duration">
+                    <strong>Duration:</strong>
+                    <span>30 minutes</span>
+                  </div>
+    
+                </div>
+    
+                <div
+                  class="spa-price"
+                  data-price-for="Body"
+                >
+                  Loading price...
+                </div>
+    
+    
+                <div class="spa-qty">
+    
+                  <button
+                    type="button"
+                    class="qty-minus"
+                    aria-label="Decrease quantity"
+                  >
+                    −
+                  </button>
+    
+                  <span class="qty-value">
+                    0
+                  </span>
+    
+                  <button
+                    type="button"
+                    class="qty-plus"
+                    aria-label="Increase quantity"
+                  >
+                    +
+                  </button>
+    
+                </div>
+    
+              </div>
+    
+            </div>
+    
+    
+            <!-- =================================================
+                 SOLE THERAPY
+            ================================================== -->
+    
+            <div
+              class="spa-card"
+              data-service="Scrub"
+              data-variant-id="49398242541806"
+            >
+    
+              <div class="spa-service-image">
+    
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0633/7786/6990/files/Smoothing_Sole_Therapy.png?v=1786583834"
+                  alt="Smoothing Sole Therapy"
+                  loading="lazy"
+                >
+    
+              </div>
+    
+    
+              <div class="spa-service-content">
+    
+                <div class="spa-service-icon">
+                  🦶
+                </div>
+    
+                <h4>
+                  Smoothing Sole Therapy
+                </h4>
+    
+                <p>
+                  A foot ritual that starts with a warm Epsom salt soak followed by an exfoliation with Pili Ani Coco Sugar and Volcanic Soap.
+                </p>
+    
+                <div class="spa-service-details">
+    
+                  <div>
+                    <strong>Best For:</strong>
+                    Rough heels, dry skin, or pre-pedicure prep
+                  </div>
+    
+                  <div class="spa-duration">
+                    <strong>Duration:</strong>
+                    <span>30 minutes</span>
+                  </div>
+    
+                </div>
+    
+                <div
+                  class="spa-price"
+                  data-price-for="Scrub"
+                >
+                  Loading price...
+                </div>
+    
+    
+                <div class="spa-qty">
+    
+                  <button
+                    type="button"
+                    class="qty-minus"
+                    aria-label="Decrease quantity"
+                  >
+                    −
+                  </button>
+    
+                  <span class="qty-value">
+                    0
+                  </span>
+    
+                  <button
+                    type="button"
+                    class="qty-plus"
+                    aria-label="Increase quantity"
+                  >
+                    +
+                  </button>
+    
+                </div>
+    
+              </div>
+    
+            </div>
+    
+    
+            <!-- =================================================
+                 FACIAL
+            ================================================== -->
+    
+            <div
+              class="spa-card"
+              data-service="Facial"
+              data-variant-id="49398252339438"
+            >
+    
+              <div class="spa-service-image">
+    
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0633/7786/6990/files/30-minute_Power_Facial_Ritual.png?v=1786583832"
+                  alt="30-minute Power Facial Ritual"
+                  loading="lazy"
+                >
+    
+              </div>
+    
+    
+              <div class="spa-service-content">
+    
+                <div class="spa-service-icon">
+                  ✨
+                </div>
+    
+                <h4>
+                  30-minute Power Facial Ritual
+                </h4>
+    
+                <p>
+                  A compact but effective facial fitness ritual that targets fatigue and dullness using cleansing and energizing massage techniques.
+                </p>
+    
+                <div class="spa-service-details">
+    
+                  <div>
+                    <strong>Best For:</strong>
+                    Skin needing a quick pick-me-up and glow-boost
+                  </div>
+    
+                  <div class="spa-duration">
+                    <strong>Duration:</strong>
+                    <span>30 minutes</span>
+                  </div>
+    
+                </div>
+    
+                <div
+                  class="spa-price"
+                  data-price-for="Facial"
+                >
+                  Loading price...
+                </div>
+    
+    
+                <div class="spa-qty">
+    
+                  <button
+                    type="button"
+                    class="qty-minus"
+                    aria-label="Decrease quantity"
+                  >
+                    −
+                  </button>
+    
+                  <span class="qty-value">
+                    0
+                  </span>
+    
+                  <button
+                    type="button"
+                    class="qty-plus"
+                    aria-label="Increase quantity"
+                  >
+                    +
+                  </button>
+    
+                </div>
+    
+              </div>
+    
+            </div>
+    
+    
+            <!-- =================================================
+                 HAIR
+            ================================================== -->
+    
+            <div
+              class="spa-card"
+              data-service="Hair"
+              data-variant-id="49398129950958"
+            >
+    
+              <div class="spa-service-image">
+    
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0633/7786/6990/files/Scalp_Detox_Signature_Airwrap_Blowout.png?v=1786583832"
+                  alt="Scalp Detox Signature Airwrap Blowout"
+                  loading="lazy"
+                >
+    
+              </div>
+    
+    
+              <div class="spa-service-content">
+    
+                <div class="spa-service-icon">
+                  💆‍♀️
+                </div>
+    
+                <h4>
+                  Scalp Detox &amp; Signature Airwrap Blowout
+                </h4>
+    
+                <p>
+                  An advanced therapy starting with a Scalp Analysis and purifying cleanse using Pili Ani Liquid Shampoo and Salt Scalp Scrub.
+                </p>
+    
+                <div class="spa-service-details">
+    
+                  <div>
+                    <strong>Best For:</strong>
+                    Hair fall, thinning hair, and proactive scalp health
+                  </div>
+    
+                  <div class="spa-duration">
+                    <strong>Duration:</strong>
+                    <span>45 minutes</span>
+                  </div>
+    
+                </div>
+    
+                <div
+                  class="spa-price"
+                  data-price-for="Hair"
+                >
+                  Loading price...
+                </div>
+    
+    
+                <div class="spa-qty">
+    
+                  <button
+                    type="button"
+                    class="qty-minus"
+                    aria-label="Decrease quantity"
+                  >
+                    −
+                  </button>
+    
+                  <span class="qty-value">
+                    0
+                  </span>
+    
+                  <button
+                    type="button"
+                    class="qty-plus"
+                    aria-label="Increase quantity"
+                  >
+                    +
+                  </button>
+    
+                </div>
+    
+              </div>
+    
+            </div>
+    
+          </div>
+    
+    
+          <!-- =====================================================
+               BOTTOM SECTION
+          ====================================================== -->
+    
+          <div class="spa-bottom-section">
+    
+            <!-- TERMS + PAYMENT -->
+    
+            <div>
+    
+              <div class="spa-payment-notice">
+    
+                <strong>
+                  💳 Payment &amp; Delivery Notice
+                </strong>
+    
+                This is a
+                <strong style="display:inline; margin:0; font-size:14px; color:#555;">
+                  digital e-voucher
+                </strong>
+                and no physical item will be shipped.
+    
+                <br><br>
+    
+                Payment must be completed online at checkout.
+    
+                <strong style="display:inline; margin:0; font-size:14px; color:#8d6736;">
+                  Cash on Delivery (COD) is not applicable
+                </strong>
+                to Spa E-Voucher purchases.
+    
+                <br><br>
+    
+                Your e-voucher will be sent to your email after successful payment.
+    
+              </div>
+    
+    
+              <div class="spa-terms">
+    
+                ✔ Minimum of 3 services required.<br>
+    
+                ✔ Payment must be completed online at checkout; COD is not applicable.<br>
+    
+                ✔ This is a digital e-voucher; no physical item will be shipped.<br>
+    
+                ✔ Redeemable at Pili Ani Lifestyle Spa until December 31, 2026 only.<br>
+    
+                ✔ Advance booking is required and is subject to appointment availability.<br>
+    
+                ✔ Valid for one time use only.<br>
+    
+                ✔ Non-refundable and not exchangeable for cash.<br>
+    
+                ✔ Existing and new customers are welcome.
+    
+              </div>
+    
+            </div>
+    
+    
+            <!-- ORDER SUMMARY -->
+    
+            <div class="spa-order-summary">
+    
+              <div
+                class="spa-original-total"
+                id="spaOriginalTotal"
+              >
+                Original Total: ₱0
+              </div>
+    
+    
+              <div
+                class="spa-discounted-total"
+                id="spaTotal"
+              >
+                50% OFF Total: ₱0
+              </div>
+    
+    
+              <div
+                class="spa-total-savings"
+                id="spaSavings"
+              >
+                You Save: ₱0
+              </div>
+    
+    
+              <div
+                class="spa-error"
+                id="spaError"
+              >
+                Please select at least 3 services.
+              </div>
+    
+    
+              <div class="spa-cta">
+    
+                <button
+                  id="spaSubmit"
+                  class="spa-btn"
+                  type="button"
+                  disabled
+                >
+                  Proceed to Checkout
+                </button>
+    
+              </div>
+    
+            </div>
+    
+          </div>
+    
+        </div>
+    
+      </div>
+    
+    </div>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    
+      /* =====================================================
+         ELEMENTS
+      ===================================================== */
+    
+      var cards = document.querySelectorAll(".spa-card");
+    
+      var counter = document.getElementById("spaCount");
+    
+      var originalTotalDisplay =
+        document.getElementById("spaOriginalTotal");
+    
+      var totalDisplay =
+        document.getElementById("spaTotal");
+    
+      var savingsDisplay =
+        document.getElementById("spaSavings");
+    
+      var submitBtn =
+        document.getElementById("spaSubmit");
+    
+      var error =
+        document.getElementById("spaError");
+    
+    
+      /* =====================================================
+         SHOPIFY DISCOUNT CODE
+         
+         IMPORTANT:
+         Replace SPA50 with your actual Shopify
+         discount code.
+      ===================================================== */
+    
+      var SHOPIFY_DISCOUNT_CODE = "SPA50";
+    
+    
+      /* =====================================================
+         DISCOUNT
+      ===================================================== */
+    
+      var DISCOUNT_PERCENT = 50;
+    
+      var DISCOUNT_MULTIPLIER =
+        (100 - DISCOUNT_PERCENT) / 100;
+    
+    
+      /* =====================================================
+         SERVICE DATA
+      ===================================================== */
+    
+      var serviceVariants = {
+    
+        Body: 49398249586926,
+    
+        Scrub: 49398242541806,
+    
+        Facial: 49398252339438,
+    
+        Hair: 49398129950958
+    
+      };
+    
+    
+      /* =====================================================
+         SHOPIFY ORIGINAL PRICES
+      ===================================================== */
+    
+      var servicePrices = {
+    
+        Body: null,
+    
+        Scrub: null,
+    
+        Facial: null,
+    
+        Hair: null
+    
+      };
+    
+    
+      /* =====================================================
+         QUANTITIES
+      ===================================================== */
+    
+      var quantities = {
+    
+        Body: 0,
+    
+        Scrub: 0,
+    
+        Facial: 0,
+    
+        Hair: 0
+    
+      };
+    
+    
+      /* =====================================================
+         FORMAT PRICE
+      ===================================================== */
+    
+      function formatPrice(price) {
+    
+        return "₱" +
+          Number(price).toLocaleString(
+            "en-PH",
+            {
+              minimumFractionDigits: 0,
+              maximumFractionDigits: 2
+            }
+          );
+    
+      }
+    
+    
+      /* =====================================================
+         GET DISCOUNTED PRICE
+      ===================================================== */
+    
+      function getDiscountedPrice(originalPrice) {
+    
+        return Number(originalPrice) *
+          DISCOUNT_MULTIPLIER;
+    
+      }
+    
+    
+      /* =====================================================
+         GET SAVINGS
+      ===================================================== */
+    
+      function getSavings(originalPrice) {
+    
+        return Number(originalPrice) -
+          getDiscountedPrice(originalPrice);
+    
+      }
+    
+    
+      /* =====================================================
+         UPDATE CARD PRICE
+      ===================================================== */
+    
+      function updateCardPrice(service) {
+    
+        var card =
+          document.querySelector(
+            '.spa-card[data-service="' +
+            service +
+            '"]'
+          );
+    
+        if (!card) {
+          return;
+        }
+    
+    
+        var priceElement =
+          card.querySelector(".spa-price");
+    
+        if (!priceElement) {
+          return;
+        }
+    
+    
+        var originalPrice =
+          servicePrices[service];
+    
+    
+        if (
+          originalPrice !== null &&
+          !isNaN(originalPrice)
+        ) {
+    
+          var discountedPrice =
+            getDiscountedPrice(
+              originalPrice
+            );
+    
+          var savings =
+            getSavings(
+              originalPrice
+            );
+    
+    
+          priceElement.innerHTML =
+    
+            '<div class="spa-original-price">' +
+              formatPrice(originalPrice) +
+            '</div>' +
+    
+            '<div class="spa-discounted-price">' +
+              formatPrice(discountedPrice) +
+    
+              '<span class="spa-discount-label">' +
+                DISCOUNT_PERCENT +
+                '% OFF' +
+              '</span>' +
+    
+            '</div>' +
+    
+            '<div class="spa-savings">' +
+              'You save ' +
+              formatPrice(savings) +
+            '</div>';
+    
+    
+          priceElement.classList.remove(
+            "spa-price-error"
+          );
+    
+        }
+    
+      }
+    
+    
+      /* =====================================================
+         LOAD SHOPIFY VARIANT PRICE
+      ===================================================== */
+    
+      function loadVariantPrice(service) {
+    
+        var variantId =
+          serviceVariants[service];
+    
+    
+        if (!variantId) {
+    
+          return Promise.reject(
+            new Error(
+              "Missing Shopify variant ID."
+            )
+          );
+    
+        }
+    
+    
+        return fetch(
+          "/variants/" +
+          variantId +
+          ".js",
+          {
+            method: "GET",
+            headers: {
+              "Accept": "application/json"
+            }
+          }
+        )
+    
+        .then(function (response) {
+    
+          if (!response.ok) {
+    
+            throw new Error(
+              "Unable to retrieve Shopify variant."
+            );
+    
+          }
+    
+          return response.json();
+    
+        })
+    
+        .then(function (variant) {
+    
+          if (
+            !variant ||
+            typeof variant.price === "undefined"
+          ) {
+    
+            throw new Error(
+              "Shopify variant price is unavailable."
+            );
+    
+          }
+    
+    
+          /*
+           * Shopify returns price
+           * in cents.
+           */
+    
+          servicePrices[service] =
+            Number(variant.price) / 100;
+    
+    
+          updateCardPrice(service);
+    
+          updateSelection();
+    
+          return variant;
+    
+        });
+    
+      }
+    
+    
+      /* =====================================================
+         LOAD ALL SHOPIFY PRICES
+      ===================================================== */
+    
+      var priceRequests =
+        Object.keys(serviceVariants).map(
+          function (service) {
+    
+            return loadVariantPrice(service)
+    
+              .catch(function (priceError) {
+    
+                console.error(
+                  "Price loading error for " +
+                  service +
+                  ":",
+                  priceError
+                );
+    
+    
+                var card =
+                  document.querySelector(
+                    '.spa-card[data-service="' +
+                    service +
+                    '"]'
+                  );
+    
+    
+                if (card) {
+    
+                  var priceElement =
+                    card.querySelector(
+                      ".spa-price"
+                    );
+    
+    
+                  if (priceElement) {
+    
+                    priceElement.textContent =
+                      "Price unavailable";
+    
+                    priceElement.classList.add(
+                      "spa-price-error"
+                    );
+    
+                  }
+    
+                }
+    
+    
+                return null;
+    
+              });
+    
+          }
+        );
+    
+    
+      Promise.all(priceRequests)
+        .then(function () {
+    
+          updateSelection();
+    
+        });
+    
+    
+      /* =====================================================
+         UPDATE SELECTION
+      ===================================================== */
+    
+      function updateSelection() {
+    
+        var totalQuantity = 0;
+    
+        var originalTotal = 0;
+    
+    
+        /* ---------------------------------------------
+           CALCULATE ORIGINAL TOTAL
+        --------------------------------------------- */
+    
+        Object.keys(quantities).forEach(
+          function (service) {
+    
+            var qty =
+              quantities[service];
+    
+    
+            totalQuantity += qty;
+    
+    
+            var originalPrice =
+              servicePrices[service];
+    
+    
+            if (
+              originalPrice !== null &&
+              !isNaN(originalPrice)
+            ) {
+    
+              originalTotal +=
+                qty * originalPrice;
+    
+            }
+    
+          }
+        );
+    
+    
+        /* ---------------------------------------------
+           CALCULATE DISCOUNTED TOTAL
+        --------------------------------------------- */
+    
+        var discountedTotal =
+          originalTotal *
+          DISCOUNT_MULTIPLIER;
+    
+    
+        /* ---------------------------------------------
+           CALCULATE SAVINGS
+        --------------------------------------------- */
+    
+        var totalSavings =
+          originalTotal -
+          discountedTotal;
+    
+    
+        /* ---------------------------------------------
+           UPDATE COUNTER
+        --------------------------------------------- */
+    
+        counter.textContent =
+          totalQuantity;
+    
+    
+        /* ---------------------------------------------
+           UPDATE ORIGINAL TOTAL
+        --------------------------------------------- */
+    
+        originalTotalDisplay.textContent =
+          "Original Total: " +
+          formatPrice(originalTotal);
+    
+    
+        /* ---------------------------------------------
+           UPDATE DISCOUNTED TOTAL
+        --------------------------------------------- */
+    
+        totalDisplay.textContent =
+          "50% OFF Total: " +
+          formatPrice(discountedTotal);
+    
+    
+        /* ---------------------------------------------
+           UPDATE SAVINGS
+        --------------------------------------------- */
+    
+        savingsDisplay.textContent =
+          "You Save: " +
+          formatPrice(totalSavings);
+    
+    
+        /* ---------------------------------------------
+           MINIMUM REQUIREMENT
+        --------------------------------------------- */
+    
+        var minimumReached =
+          totalQuantity >= 3;
+    
+    
+        submitBtn.disabled =
+          !minimumReached;
+    
+    
+        if (minimumReached) {
+    
+          error.style.display =
+            "none";
+    
+        }
+    
+    
+        /* ---------------------------------------------
+           UPDATE CARD SELECTED STATE
+        --------------------------------------------- */
+    
+        cards.forEach(
+          function (card) {
+    
+            var service =
+              card.getAttribute(
+                "data-service"
+              );
+    
+    
+            if (
+              quantities[service] > 0
+            ) {
+    
+              card.classList.add(
+                "selected"
+              );
+    
+            } else {
+    
+              card.classList.remove(
+                "selected"
+              );
+    
+            }
+    
+          }
+        );
+    
+      }
+    
+    
+      /* =====================================================
+         QUANTITY BUTTONS
+      ===================================================== */
+    
+      cards.forEach(
+        function (card) {
+    
+          var service =
+            card.getAttribute(
+              "data-service"
+            );
+    
+    
+          var value =
+            card.querySelector(
+              ".qty-value"
+            );
+    
+    
+          var plusButton =
+            card.querySelector(
+              ".qty-plus"
+            );
+    
+    
+          var minusButton =
+            card.querySelector(
+              ".qty-minus"
+            );
+    
+    
+          /* ---------------------------------------------
+             PLUS
+          --------------------------------------------- */
+    
+          plusButton.addEventListener(
+            "click",
+            function (event) {
+    
+              event.preventDefault();
+    
+              event.stopPropagation();
+    
+    
+              quantities[service]++;
+    
+    
+              value.textContent =
+                quantities[service];
+    
+    
+              updateSelection();
+    
+            }
+          );
+    
+    
+          /* ---------------------------------------------
+             MINUS
+          --------------------------------------------- */
+    
+          minusButton.addEventListener(
+            "click",
+            function (event) {
+    
+              event.preventDefault();
+    
+              event.stopPropagation();
+    
+    
+              if (
+                quantities[service] > 0
+              ) {
+    
+                quantities[service]--;
+    
+                value.textContent =
+                  quantities[service];
+    
+                updateSelection();
+    
+              }
+    
+            }
+          );
+    
+        }
+      );
+    
+    
+      /* =====================================================
+         PROCEED TO CHECKOUT
+      ===================================================== */
+    
+      submitBtn.addEventListener(
+        "click",
+        function (event) {
+    
+          event.preventDefault();
+    
+    
+          if (
+            submitBtn.dataset.processing ===
+            "true"
+          ) {
+    
+            return;
+    
+          }
+    
+    
+          var selectedServices = [];
+    
+          var cartItems = [];
+    
+          var totalQuantity = 0;
+    
+          var originalTotal = 0;
+    
+    
+          /* ---------------------------------------------
+             BUILD CART
+          --------------------------------------------- */
+    
+          Object.keys(quantities).forEach(
+            function (service) {
+    
+              var qty =
+                quantities[service];
+    
+    
+              if (qty > 0) {
+    
+                var originalPrice =
+                  servicePrices[service];
+    
+    
+                if (
+                  originalPrice === null ||
+                  isNaN(originalPrice)
+                ) {
+    
+                  throw new Error(
+                    "Unable to retrieve the price for " +
+                    service +
+                    " from Shopify."
+                  );
+    
+                }
+    
+    
+                var discountedPrice =
+                  getDiscountedPrice(
+                    originalPrice
+                  );
+    
+    
+                var savings =
+                  getSavings(
+                    originalPrice
+                  );
+    
+    
+                totalQuantity += qty;
+    
+    
+                originalTotal +=
+                  qty * originalPrice;
+    
+    
+                selectedServices.push(
+                  service +
+                  " x" +
+                  qty
+                );
+    
+    
+                cartItems.push({
+    
+                  id:
+                    serviceVariants[
+                      service
+                    ],
+    
+                  quantity:
+                    qty,
+    
+                  properties: {
+    
+                    "Voucher Type":
+                      "Spa E-Voucher 50% OFF",
+    
+                    "Selected Service":
+                      service,
+    
+                    "Original Price":
+                      formatPrice(
+                        originalPrice
+                      ),
+    
+                    "50% OFF Price":
+                      formatPrice(
+                        discountedPrice
+                      ),
+    
+                    "Savings":
+                      formatPrice(
+                        savings
+                      )
+    
+                  }
+    
+                });
+    
+              }
+    
+            }
+          );
+    
+    
+          /* =================================================
+             MINIMUM VALIDATION
+          ================================================= */
+    
+          if (
+            totalQuantity < 3
+          ) {
+    
+            error.style.display =
+              "block";
+    
+            error.textContent =
+              "Please select at least 3 services.";
+    
+            return;
+    
+          }
+    
+    
+          /* =================================================
+             FINAL TOTALS
+          ================================================= */
+    
+          var discountedTotal =
+            originalTotal *
+            DISCOUNT_MULTIPLIER;
+    
+    
+          var totalSavings =
+            originalTotal -
+            discountedTotal;
+    
+    
+          /* =================================================
+             PREVENT DOUBLE CLICK
+          ================================================= */
+    
+          submitBtn.dataset.processing =
+            "true";
+    
+          submitBtn.disabled =
+            true;
+    
+          submitBtn.textContent =
+            "Proceeding to Checkout...";
+    
+    
+          /* =================================================
+             ADD ITEMS TO CART
+          ================================================= */
+    
+          fetch(
+            "/cart/add.js",
+            {
+    
+              method: "POST",
+    
+              headers: {
+    
+                "Content-Type":
+                  "application/json",
+    
+                "Accept":
+                  "application/json"
+    
+              },
+    
+              body:
+                JSON.stringify({
+                  items: cartItems
+                })
+    
+            }
+          )
+    
+          .then(function (response) {
+    
+            if (!response.ok) {
+    
+              return response.json()
+    
+                .then(function (data) {
+    
+                  throw new Error(
+                    data.description ||
+                    "Unable to add services to cart."
+                  );
+    
+                })
+    
+                .catch(function () {
+    
+                  throw new Error(
+                    "Unable to add services to cart."
+                  );
+    
+                });
+    
+            }
+    
+    
+            return response.json();
+    
+          })
+    
+    
+          /* =================================================
+             SAVE CART ATTRIBUTES
+          ================================================= */
+    
+          .then(function () {
+    
+            return fetch(
+              "/cart/update.js",
+              {
+    
+                method: "POST",
+    
+                headers: {
+    
+                  "Content-Type":
+                    "application/json",
+    
+                  "Accept":
+                    "application/json"
+    
+                },
+    
+                body:
+                  JSON.stringify({
+    
+                    attributes: {
+    
+                      "Voucher Type":
+                        "Spa E-Voucher 50% OFF",
+    
+                      "Selected Services":
+                        selectedServices.join(
+                          ", "
+                        ),
+    
+                      "Total Services":
+                        totalQuantity,
+    
+                      "Original Total":
+                        formatPrice(
+                          originalTotal
+                        ),
+    
+                      "50% OFF Total":
+                        formatPrice(
+                          discountedTotal
+                        ),
+    
+                      "Total Savings":
+                        formatPrice(
+                          totalSavings
+                        ),
+    
+                      "Payment Method":
+                        "Online Payment Only",
+    
+                      "Delivery Type":
+                        "Digital E-Voucher - Email Delivery"
+    
+                    }
+    
+                  })
+    
+              }
+            );
+    
+          })
+    
+    
+          /* =================================================
+             APPLY SHOPIFY DISCOUNT + CHECKOUT
+          ================================================= */
+    
+          .then(function () {
+    
+            /*
+             * IMPORTANT:
+             *
+             * Shopify applies the REAL 50% discount here.
+             *
+             * Example:
+             *
+             * Original = ₱3,600
+             * Discount = -₱1,800
+             * Checkout = ₱1,800
+             */
+    
+            var checkoutUrl =
+              "/discount/" +
+              encodeURIComponent(
+                SHOPIFY_DISCOUNT_CODE
+              ) +
+              "?redirect=" +
+              encodeURIComponent(
+                "/checkout"
+              );
+    
+    
+            window.location.href =
+              checkoutUrl;
+    
+          })
+    
+    
+          /* =================================================
+             ERROR
+          ================================================= */
+    
+          .catch(function (checkoutError) {
+    
+            console.error(
+              "Checkout Error:",
+              checkoutError
+            );
+    
+    
+            alert(
+              checkoutError.message ||
+              "Something went wrong. Please try again."
+            );
+    
+    
+            submitBtn.disabled =
+              false;
+    
+    
+            submitBtn.dataset.processing =
+              "false";
+    
+    
+            submitBtn.textContent =
+              "Proceed to Checkout";
+    
+          });
+    
+        }
+      );
+    
+    
+      /* =====================================================
+         VOUCHER SLIDER
+      ===================================================== */
+    
+      var slider =
+        document.getElementById(
+          "spaVoucherSlider"
+        );
+    
+    
+      var sliderTrack =
+        document.getElementById(
+          "spaSliderTrack"
+        );
+    
+    
+      var prevButton =
+        document.getElementById(
+          "spaSliderPrev"
+        );
+    
+    
+      var nextButton =
+        document.getElementById(
+          "spaSliderNext"
+        );
+    
+    
+      var dots =
+        document.querySelectorAll(
+          ".spa-slider-dot"
+        );
+    
+    
+      var currentSlide = 0;
+    
+      var sliderInterval;
+    
+      var totalSlides = 4;
+    
+    
+      /* =====================================================
+         SHOW SLIDE
+      ===================================================== */
+    
+      function showSlide(index) {
+    
+        if (index < 0) {
+    
+          index =
+            totalSlides - 1;
+    
+        }
+    
+    
+        if (index >= totalSlides) {
+    
+          index = 0;
+    
+        }
+    
+    
+        currentSlide =
+          index;
+    
+    
+        sliderTrack.style.transform =
+          "translateX(-" +
+          (
+            currentSlide * 100
+          ) +
+          "%)";
+    
+    
+        dots.forEach(
+          function (dot, dotIndex) {
+    
+            dot.classList.toggle(
+              "active",
+              dotIndex ===
+              currentSlide
+            );
+    
+          }
+        );
+    
+      }
+    
+    
+      /* =====================================================
+         NEXT SLIDE
+      ===================================================== */
+    
+      function nextSlide() {
+    
+        showSlide(
+          currentSlide + 1
+        );
+    
+      }
+    
+    
+      /* =====================================================
+         PREVIOUS SLIDE
+      ===================================================== */
+    
+      function previousSlide() {
+    
+        showSlide(
+          currentSlide - 1
+        );
+    
+      }
+    
+    
+      /* =====================================================
+         START SLIDER
+      ===================================================== */
+    
+      function startSlider() {
+    
+        clearInterval(
+          sliderInterval
+        );
+    
+    
+        sliderInterval =
+          setInterval(
+            function () {
+    
+              nextSlide();
+    
+            },
+            5000
+          );
+    
+      }
+    
+    
+      /* =====================================================
+         RESET SLIDER
+      ===================================================== */
+    
+      function resetSlider() {
+    
+        clearInterval(
+          sliderInterval
+        );
+    
+        startSlider();
+    
+      }
+    
+    
+      /* =====================================================
+         NEXT BUTTON
+      ===================================================== */
+    
+      nextButton.addEventListener(
+        "click",
+        function () {
+    
+          nextSlide();
+    
+          resetSlider();
+    
+        }
+      );
+    
+    
+      /* =====================================================
+         PREVIOUS BUTTON
+      ===================================================== */
+    
+      prevButton.addEventListener(
+        "click",
+        function () {
+    
+          previousSlide();
+    
+          resetSlider();
+    
+        }
+      );
+    
+    
+      /* =====================================================
+         DOTS
+      ===================================================== */
+    
+      dots.forEach(
+        function (dot) {
+    
+          dot.addEventListener(
+            "click",
+            function () {
+    
+              var slide =
+                parseInt(
+                  dot.getAttribute(
+                    "data-slide"
+                  ),
+                  10
+                );
+    
+    
+              showSlide(slide);
+    
+              resetSlider();
+    
+            }
+          );
+    
+        }
+      );
+    
+    
+      /* =====================================================
+         PAUSE ON HOVER
+      ===================================================== */
+    
+      slider.addEventListener(
+        "mouseenter",
+        function () {
+    
+          clearInterval(
+            sliderInterval
+          );
+    
+        }
+      );
+    
+    
+      slider.addEventListener(
+        "mouseleave",
+        function () {
+    
+          startSlider();
+    
+        }
+      );
+    
+    
+      /* =====================================================
+         MOBILE SWIPE
+      ===================================================== */
+    
+      var touchStartX = 0;
+    
+      var touchEndX = 0;
+    
+    
+      slider.addEventListener(
+        "touchstart",
+        function (event) {
+    
+          touchStartX =
+            event.changedTouches[0]
+              .screenX;
+    
+        },
+        {
+          passive: true
+        }
+      );
+    
+    
+      slider.addEventListener(
+        "touchend",
+        function (event) {
+    
+          touchEndX =
+            event.changedTouches[0]
+              .screenX;
+    
+    
+          var swipeDistance =
+            touchStartX -
+            touchEndX;
+    
+    
+          if (
+            Math.abs(
+              swipeDistance
+            ) > 50
+          ) {
+    
+            if (
+              swipeDistance > 0
+            ) {
+    
+              nextSlide();
+    
+            } else {
+    
+              previousSlide();
+    
+            }
+    
+    
+            resetSlider();
+    
+          }
+    
+        },
+        {
+          passive: true
+        }
+      );
+    
+    
+      /* =====================================================
+         INITIALIZE
+      ===================================================== */
+    
+      showSlide(0);
+    
+      startSlider();
+    
+      updateSelection();
+    
+    });
+    </script>
