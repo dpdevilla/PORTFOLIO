@@ -549,6 +549,7 @@
     ========================================================= */
     
     .spa-original-total {
+      display: none;
       font-size: 17px;
       color: #999;
       text-decoration: line-through;
@@ -557,12 +558,14 @@
     }
     
     .spa-discounted-total {
+      display: none;
       font-size: 28px;
       font-weight: 700;
       color: #b88b4a;
     }
     
     .spa-total-savings {
+      display: none;
       margin-top: 5px;
       font-size: 15px;
       color: #777;
@@ -1819,6 +1822,26 @@
     
     
         /* ---------------------------------------------
+           SHOW / HIDE TOTAL SUMMARY
+    
+           Keep the total area hidden until the customer
+           selects at least one service and a valid price
+           is available.
+        --------------------------------------------- */
+        var hasSelection =
+          totalQuantity > 0 && originalTotal > 0;
+    
+        originalTotalDisplay.style.display =
+          hasSelection ? "block" : "none";
+    
+        totalDisplay.style.display =
+          hasSelection ? "block" : "none";
+    
+        savingsDisplay.style.display =
+          hasSelection ? "block" : "none";
+    
+    
+        /* ---------------------------------------------
            UPDATE COUNTER
         --------------------------------------------- */
     
@@ -2696,3 +2719,74 @@
     
     });
     </script>
+
+
+
+
+
+
+    {% if 'Foot & Leg Energy Flow' in event.Items %}
+    <img
+      src="https://d3k81ch9hvuctc.cloudfront.net/company/TTrPPq/images/cd7d46ce-9ac7-4b38-bc14-4cdbc0dda211.jpeg"
+      alt="Foot & Leg Energy Flow Voucher"
+      width="600"
+      style="display:block;width:100%;max-width:600px;height:auto;"
+    >
+    {% endif %}
+    
+    {% if 'Ultimate Restore' in event.Items %}
+    <img
+      src="ULTIMATE-RESTORE-IMAGE-URL"
+      alt="Ultimate Restore Voucher"
+      width="600"
+      style="display:block;width:100%;max-width:600px;height:auto;"
+    >
+    {% endif %}
+    
+    {% if 'Tone & Flow' in event.Items %}
+    <img
+      src="TONE-FLOW-IMAGE-URL"
+      alt="Tone & Flow Voucher"
+      width="600"
+      style="display:block;width:100%;max-width:600px;height:auto;"
+    >
+    {% endif %}
+    
+    {% if 'Scalp Detox & Signature Airwrap Blowout' in event.Items %}
+    <img
+      src="SCALP-DETOX-IMAGE-URL"
+      alt="Scalp Detox Voucher"
+      width="600"
+      style="display:block;width:100%;max-width:600px;height:auto;"
+    >
+    {% endif %}
+    
+    {% if '30-minute Power Facial Ritual' in event.Items %}
+    <img
+      src="POWER-FACIAL-IMAGE-URL"
+      alt="30-minute Power Facial Ritual Voucher"
+      width="600"
+      style="display:block;width:100%;max-width:600px;height:auto;"
+    >
+    {% endif %}
+    
+    {% if 'Smoothing Sole Therapy' in event.Items %}
+    <img
+      src="SMOOTHING-SOLE-IMAGE-URL"
+      alt="Smoothing Sole Therapy Voucher"
+      width="600"
+      style="display:block;width:100%;max-width:600px;height:auto;"
+    >
+    {% endif %}
+    
+    {% if 'Tension-Relief Focus' in event.Items %}
+    <img
+      src="TENSION-RELIEF-IMAGE-URL"
+      alt="Tension-Relief Focus Voucher"
+      width="600"
+      style="display:block;width:100%;max-width:600px;height:auto;"
+    >
+    {% endif %}
+
+
+
